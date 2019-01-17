@@ -1,0 +1,30 @@
+---
+title: "Week 01: Lab"
+output: html_notebook
+---
+
+# Lab: Squared Away
+- Installation of class tools:
+    - R, 
+    - RStudio, 
+    - Log into our VMs
+- RStudio Intro
+    - What is an IDE?
+    - RStudio Tour
+    - Using Help
+- R: A rather useful calculator
+- Data Types: Variable, Vector, or Dataframe?
+    - Comparison to Excel
+    - Numeric
+    - Characters
+    - There are others . . . we'll get to them eventually
+    - Vector
+    - Data frame
+        - Accessing a column
+        - Accessing a vector
+        - Accessing a row
+        - A row _is_ a vector.
+- Built-in data sets
+    - Load
+    - View Data: CLI
+    - View data: RStudio

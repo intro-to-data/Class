@@ -1,0 +1,28 @@
+# Lecture
+- Yet more data import:
+    - Open Data NY (CSV/JSON)
+- Logic and flow control structures
+    - These are an extension of last week's scripting conversation.
+        - Without these, your scripts are very linear.
+        - With these - you control the universe.
+    - `if()`
+    - `ifelse()`
+    - `for()`
+    - `warning()`
+    - `stop()`
+    - Example: How to use these: these while importing multiple files
+- Writing/using functions
+- Exporting Data
+    - CSV
+    - Excel
+    - Rdata
+- Simple/Bind
+    - `bind_rows()` - Remember your first Homework assignment?, 
+    - `bind_cols()` - less frequently useful, but it is used
+
+# Lab: Open Data New York
+- This should be a solo lab, based on an Open Data New York data set.
+- Students will be asked to use the class template to download
+  the data, and then write-up some sort of a simple analysis in R
+  Markdown.
+- I need to write this lab to focus on EDA.

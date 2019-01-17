@@ -1,0 +1,283 @@
+---
+output:
+  revealjs::revealjs_presentation:
+    transition: fade
+    logo: ../includes/nav_logo.svg
+    favicon: ../includes/favicon.ico
+    css: ../includes/custom.css
+---
+
+## Relational Data
+
+![](./includes/relational-nycflights.png)
+
+## Structure
+
+- In past classes, I have provided you with a R script.
+- I want to try out a new structure tonight.
+- Follow along in R Studio by creating a new R script.
+- More Exercises
+- Some code in the slides (on Blackboard).
+- You can use this file to take notes, etc.
+- I would like to know how you think this works and if it is a good
+  idea going foward (at the end of today's class).
+
+## Setup
+- Create a new R Studio Project.
+- Call it Intro To Relational (or similar).
+  
+## Setup - EXERCISES
+- Add the following code to the R script:
+
+```{r setup, echo=TRUE, message=FALSE, warning=FALSE}
+
+library(knitr)           ## For making pretty tables.
+library(tidyverse)       ## Loads dplyr
+library(nycflights13)    ## Our data.
+
+## IF nycflights13 is not installed:
+## install.packages("nycflights13")
+
+## Load the data
+## Note the "promise" of the data
+data(airlines)
+data(airports)
+data(flights)
+data(planes)
+data(weather)
+
+```
+
+## Setup (2)
+- Use this file to take notes, run code, etc.
+- Tonight is a good time to practice running R Markdown.
+
+## Any . . . Related . . . Experience?
+- Have any of you ever worked with relational data? 
+- Examples:
+    - Access, 
+    - SAS Proc SQL,
+    - MySQL/Postgres
+    - MSSQL/Oracle
+    
+**Note:** Excel is nice but is rarely used with relational data. To do
+so, you have to use vlookup and hlookup, and it is slow.
+
+## Tonight's Goals
+<div class="left">
+  - Where Does This Fit?
+  - Review (table, dplyr, etc.)
+  - Why More Than One Table?
+  - NYC Flights 13
+  - Keys!
+  - Left Joins
+  - Inner Joins
+</div>
+<div class="right">
+  ![dplyr logo](./includes/hex-dplyr.png)
+</div>
+
+## Where Does This Fit?
+![Data Science<br/>Venn Diagram](./includes/Data_Science_VD.png)
+
+## Quick Review - What is a Table? (1)
+- Different implementations: data.frame, tibble, data.table
+
+<table width = "100%">
+<tr>
+<th width = "40%">
+  [Rows
+</th>
+<th width = "10%">
+  ,
+</th>
+<th width = "40%">
+  Columns]
+</th>
+</tr>
+<tr>
+<td width = "40%", style = "vertical-align: middle;">
+  ![By Williemuse - Own work, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=47471418](./includes/Theatre_Goer_Enjoys_a_Show.png) 
+</td>
+<td width = "10%", style = "vertical-align: middle;">
+  ,
+</td>
+<td width = "40%", style = "vertical-align: middle;">
+  ![Public Domain, https://commons.wikimedia.org/w/index.php?curid=2042314](./includes/PalladioTuscan.jpg)
+</td>
+</tr>
+</table>
+
+## Quick Review - What is a Table? (2)
+
+```{r echo=FALSE}
+
+head(planes, 4) %>% knitr::kable()
+
+```
+
+## Quick Review - What is a Table? (3)
+- Unit: What makes a row unique?
+- _PRIMARY KEY_: The fancy/relational term for "unit"
+- The primary key is usually, but not always, one of the first
+  columns.
+- Quick Exercise:
+    - Open the planes table in R Studio.
+    - What is the key for the planes table?
+
+## Quick Review - EXERCISES
+- Using dplyr and the planes table: 
+    - Create a new table called `planes_by_manufacturer`
+    - Create a new table called `planes_embraer` containing only those
+      planes made by EMBRAER
+    - What is the use of kable()?
+
+## Why More Than One Table?
+
+<div class=left>
+### Flat/tabular data
+- Two dimensions
+- Fits into a single table
+- **Pros/Cons:**
+    - **Pro:** Convenient structure for _performing_ statistical
+      analysis
+    - **Con:** Poor structure for managing/storing data
+    - **Con:** Wastes space, can lead to data consistency errors
+</div>
+
+<div class=right>
+### Relational data 
+- Multidimensional/minimum of two tables
+- **Pros/Cons:**
+    - **Pro:** Convenient structure for managing/storing data
+    - **Pro:** Excellent at structural complexity/saving space
+    - **Con:** Poor structure for statistical analysis
+</div>
+
+## NYC Flights 13 (1)
+- On-time data for all flights that departed NYC (i.e. JFK, LGA or
+  EWR) in 2013.
+- **airlines:** Look up airline names from their carrier codes.
+- **airports:** Useful metadata about airports.
+- **flights:** On-time data for all flights that departed NYC
+     (i.e. JFK, LGA or EWR) in 2013.
+- **planes:** Plane metadata for all plane tailnumbers found in the
+     FAA aircraft registry.
+- **weather:** Plane metadata for all plane tailnumbers found in the
+     FAA aircraft registry.
+- The planes and weather tables do not include American Airways and
+  Envoy Air.
+
+## Keys! (1)
+- Entity Relationship Diagram (ERD)
+- Defines the primary and foreign keys
+
+![](./includes/relational-nycflights.png)
+
+## Keys! (2)
+- Primary Key
+- Foreign Key
+- Not all tables have keys
+    - Surrogate Key
+- ERDs are AWESOME
+- But they _RARELY_ exist in real life
+
+## Keys! - DISCUSSION
+- What is the relationship between weather and airports?
+- What else could be useful and what would the key be?
+
+![](./includes/relational-nycflights.png)
+
+## Keys! - Exercise
+- Primary Keys are unique
+- Foreign Keys are not (usually)
+- Is the primary key (carrier) unique in the airlines table?
+- Is carrier unique in the flights table?
+- Does flights have a primary key?
+- If not, how can we create one?
+
+## For Reference
+
+![](./includes/relational-nycflights.png)
+
+## LEFT JOIN (1)
+![https://blog.codinghorror.com/a-visual-explanation-of-sql-joins/](./includes/left_join.png)
+
+## LEFT JOIN (2)
+
+```{r eval=FALSE}
+
+tmp_left <- 
+    flights %>%
+    left_join(planes, by = "tailnum") %>%
+    select(flight, origin, dest, tailnum, manufacturer)
+kable(tmp_left)
+dim(tmp_left)
+
+```
+
+## INNER JOIN (1)
+![https://blog.codinghorror.com/a-visual-explanation-of-sql-joins/](./includes/inner_join.png)
+
+## INNER JOIN (2)
+
+```{r eval=FALSE}
+
+tmp_inner <- 
+    flights %>%
+    inner_join(planes, by = "tailnum") %>%
+    select(flight, origin, dest, tailnum, manufacturer)
+kable(tmp_inner)
+dim(tmp_inner)
+
+```
+
+## DPLYR Chaining
+- You can either create a new object, OR chain on another command.
+- The `select()` command is not required.
+- You can add on a `mutate()`, or `group_by()`, etc.
+
+## Relational - EXERCISES
+- Run the previous `inner_join` example, but remove the select
+  statement. What does this do?
+  
+```{r eval=FALSE}
+
+tmp_inner_no_select <- 
+    flights %>%
+    inner_join(planes, by = "tailnum") %>%
+kable(tmp_inner_no_select)
+dim(tmp_inner_no_select)
+
+```
+
+## SINGLE TABLE EXERCISES
+
+- Using Flights, what can you say about the on-time arrival of
+  flights?
+  
+```{r eval=FALSE}
+
+on_time <- 
+    flights %>%
+    mutate(on_time = case_when(arr_delay >  0 ~ "No",
+                               arr_delay <  0 ~ "Yes",
+                               arr_delay == 0 ~ "Perfect")
+           ) %>%
+    group_by(on_time) %>%
+    summarize(n = n(),
+              avg = mean(arr_delay, na.rm=TRUE))
+kable(on_time)
+
+```
+
+- Does this vary by month? 
+- Remember, all of the data comes from 2013
+
+## Relational - EXERCISES
+
+- Take our last example, and group by airline.
+- Display the airline name, not the carrier number in the flights
+  table. You need to join flights to airlines.
+- Which airline has the worst over-all arrival time when they are late?
+

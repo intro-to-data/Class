@@ -1,0 +1,38 @@
+# Lecture
+- Literate Programming and Reproducible Research
+    - Thus far, we have used R Markdown as a lab notebook.
+    - But the idea is actually much bigger than that.
+    - R Markdown is an example/implementation of Literate
+      Programming - a combination of COMPUTER CODE And HUMAN LANGUAGE.
+    - Thus far, we have used R Markdown as a "lab notebook". And that
+      is a reasonable analogy. We discussed how it eliminates cut &
+      paste errors.
+    - But now I want to take it further and think about it as a tool
+      for WRITING.
+- Explain it to the marmot
+    - The importance of clear writing.
+    - This tends to get over-looked.
+- How I Met Your ~~Mother~~ Package
+    - Good: R has many packages.
+    - Bad: R has many packages.
+    - R _is not_ a simple turn-key solution.
+    - Using R successfully involves choices.
+    - How to review/assess/learn a new package.
+    - It is like a relationship. You have to decide what you want from
+      it and if your expectations are realistic.
+    - Tidyverse
+    - CRAN
+- Revisiting the Working Directory
+- Export to CSV, Excel (instead of R Markdown)
+
+# Lab: The Whole Enchilada
+- As a class:
+    - Using SQL, download data from a recent Cards Against Humanity Survey
+    - Create one or more local data sets.
+- As a group:
+    - Assess your assigned question.
+    - Using R Markdown create appropriate graphics/tables.
+    - Find answers which correlate?
+    - Develop a story.
+- As a class:
+    - Export a set of graphics / data to Excel.

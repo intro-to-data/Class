@@ -1,0 +1,19 @@
+- Sampling Theory Primer
+    - Create a fake data set.
+    - Sample from it - N = 5,10,20,40,80,160,320
+    - Standard Deviation and Confidence Intervals
+    - Real data is only rarely normal
+    - Limitations of confidence intervals on non-normal data
+    - Or the silliness of confidence intervals over impossible ranges, etc.
+- Bootstrap
+    - TODO: Think more about how to introduce this idea.
+    - Probably start off comparing it to the sample mean, variance,
+      SD, etc.
+    - Sampling to achieve a better confidence interval (bootstrap)
+
+# Lab: Pull Yourself Up ....
+    - Returning to Open Data New York
+    - Use the Analytical template to download a data set
+    - Write a script that bootstraps a calculation of a mean and a
+      proportion
+    - TODO! This needs more work.

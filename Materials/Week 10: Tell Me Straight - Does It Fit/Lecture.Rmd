@@ -1,0 +1,13 @@
+# Lecture
+- Reproducibility v Replicability
+- Simple linear regression:
+    - Build
+    - Assess
+    - Predict
+- Multivariate linear regression
+    - Logic
+    - Advantages/Disadvantages
+    - Stepwise
+
+# Lab: Let's Work Out Our Regressions
+- TODO
