@@ -4,27 +4,76 @@ output: html_notebook
 ---
 
 # Lab: Squared Away
-- Installation of class tools:
+
+## Step 0ne
+- Installation/Setup of class tools:
+    - Log into our VMs
     - R, 
     - RStudio, 
-    - Log into our VMs
+
+```{r message=FALSE, include=FALSE}
+
+install.packages("openxlsx")
+install.packages("tidyverse")
+
+```
+
+Now that we have installed some things, let's see what we have.
+
+```{r}
+data.frame(installed.packages())
+```
+
+## Step Two
 - RStudio Intro
     - What is an IDE?
     - RStudio Tour
     - Using Help
-- R: A rather useful calculator
-- Data Types: Variable, Vector, or Dataframe?
-    - Comparison to Excel
-    - Numeric
-    - Characters
-    - There are others . . . we'll get to them eventually
-    - Vector
-    - Data frame
-        - Accessing a column
-        - Accessing a vector
-        - Accessing a row
-        - A row _is_ a vector.
-- Built-in data sets
-    - Load
-    - View Data: CLI
-    - View data: RStudio
+    - **?? Questions ??**
+- Things you can do with R
+    - A rather useful calculator
+    - View data
+    - Graph data
+    - Rule you data!
+
+### R: A rather useful calculator
+
+```{r}
+
+## How to use R as a calculator.
+
+
+```
+
+### View data
+
+```{r}
+
+## What data would you like to view?
+## What kinds of data are in it?
+data()
+
+```
+
+
+### Graph Data
+
+**Question:** Does the sepal length of an iris correlate with the petal length?
+**Answer:** Yes, with an interesting step function in the middle.
+
+```{r}
+plot(iris$Sepal.Length, iris$Petal.Length)
+```
+
+
+### Rule Data
+
+```{r}
+plot(iris)
+```
+
+## Step Three
+- Questions?
+
+## Step Four
+- Compare to Excel

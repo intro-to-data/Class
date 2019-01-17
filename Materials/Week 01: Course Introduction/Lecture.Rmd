@@ -5,39 +5,20 @@ output: html_notebook
 
 # Lecture
 - Please complete your name poster!
+- Please join Slack channel "acphsintrotodata.slack.com"
 - Who are you? Who am I?
 
 # Data Science In One Image
 
 - Data Science is an interdisciplinary "fourth paradigm" of science.
 - Read from Syllabus.
+- There is a PDF if you would like it. Materials will be here on GitHub: [github.com/intro-to-data/Class](https://github.com/intro-to-data/Class)
 
 ```{r echo=FALSE, out.width='100%'}
-getwd()
-knitr::include_graphics("./Images/Data_Science_VD.png")
-
+knitr::include_graphics("https://raw.githubusercontent.com/intro-to-data/Class/master/includes/Data_Science_VD.png")
 ```
 
-- Class survey:
-    - Name (first/last initial)
-    - Year (Freshman, Sophmore, Junion, Senior, Super Senior)
-    - Have you ever programmed before?
-        - If yes - What language?
-    - Have you ever used data to make an informed decision?
-    - Rate your experience/comfort with the following tools: (0 - 3)
-        - Excel
-        - Python
-        - R
-        - SPSS
-        - SAS
-        - Tableau
-    - Have you successfully installed R on your laptop?
-    - Have you successfully installed Mysql Workbench on your laptop?
-    - Tell me three things that interest you:
-- Class Story:
-    - TODO - Write an R script which can/will collect this information
-      and produce a simple slide show for the class.
-    - This is our class story.
-    - An intro to statistics course tends to teach you about
-      statistics.
-    - I want to teach you how to tell stories.
+Source: [DrewConway.com/zia/2013/3/26/the-data-science-venn-diagram](http://drewconway.com/zia/2013/3/26/the-data-science-venn-diagram)
+
+- Review Remainder of Syllabus
+- **?? QUESTIONS ??**

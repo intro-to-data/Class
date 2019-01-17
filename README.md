@@ -192,7 +192,7 @@ encounter a concept - you won't learn this material.
 ## Week 01 - 2019-01-17
 - **Topics:** Course Introduction
     - Who are you? Please complete your name poster!
-    - Who am I?
+    - Who are you? Who am I?
     - What is "Data Science"?
     - Class Survey
     - **Review Syllabus**
@@ -266,7 +266,7 @@ encounter a concept - you won't learn this material.
     - [R4DS: Workflow: Projects](http://r4ds.had.co.nz/workflow-projects.html)
 
 ## Week 06 - 2019-02-21
-- **Topics:** EDA
+- **Topics:** Exploratory Data Analysis
 -  **Homework:** 
     - [R4DS: Relational data](http://r4ds.had.co.nz/relational-data.html)
         - Read this one a couple of times. It isn't easy.
