@@ -49,8 +49,7 @@ data.frame(installed.packages())
 
 ```{r}
 
-## What data would you like to view?
-## What kinds of data are in it?
+## Which of these? interests you?
 data()
 
 ```
@@ -62,18 +61,26 @@ data()
 **Answer:** Yes, with an interesting step function in the middle.
 
 ```{r}
-plot(iris$Sepal.Length, iris$Petal.Length)
+
 ```
 
 
 ### Rule Data
 
 ```{r}
-plot(iris)
+
 ```
 
 ## Step Three
 - Questions?
+- Concerns?
+
+```{r}
+## We can all share code via Slack!
+
+
+```
+
 
 ## Step Four
 - Compare to Excel
