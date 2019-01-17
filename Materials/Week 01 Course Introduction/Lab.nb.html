@@ -1701,6 +1701,21 @@ $(document).ready(function () {
 <!-- rnb-text-begin -->
 <div id="lab-squared-away" class="section level1">
 <h1>Lab: Squared Away</h1>
+<div id="step-zero" class="section level2">
+<h2>Step Zero</h2>
+<ul>
+<li>Write some code!</li>
+<li>“Hello World” is a time-honored first step you should take in ANY programming language.</li>
+</ul>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyMgSGVsbG8gV29ybGQhXG5cblxuYGBgIn0= -->
+<pre class="r"><code>## Hello World!
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
 <div id="step-0ne" class="section level2">
 <h2>Step 0ne</h2>
 <ul>
@@ -1716,8 +1731,9 @@ $(document).ready(function () {
 <p>Now that we have installed some things, let’s see what we have.</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZGF0YS5mcmFtZShpbnN0YWxsZWQucGFja2FnZXMoKSlcbmBgYCJ9 -->
-<pre class="r"><code>data.frame(installed.packages())</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxuZGF0YS5mcmFtZShpbnN0YWxsZWQucGFja2FnZXMoKSlcbmBgYFxuYGBgIn0= -->
+<p><code>r</code>r data.frame(installed.packages())</p>
+<pre><code></code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
@@ -1744,32 +1760,53 @@ $(document).ready(function () {
 <h3>R: A rather useful calculator</h3>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG4jIyBIb3cgdG8gdXNlIFIgYXMgYSBjYWxjdWxhdG9yLlxuXG5cbmBgYCJ9 -->
-<pre class="r"><code>
-## How to use R as a calculator.
-</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxuXG4jIyBIb3cgdG8gdXNlIFIgYXMgYSBjYWxjdWxhdG9yLlxuXG5cbmBgYFxuYGBgIn0= -->
+<p><code>r</code>r</p>
+</div>
+</div>
+<div id="how-to-use-r-as-a-calculator." class="section level2">
+<h2>How to use R as a calculator.</h2>
+<pre><code></code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
-</div>
 <div id="view-data" class="section level3">
 <h3>View data</h3>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG4jIyBXaGljaCBvZiB0aGVzZT8gaW50ZXJlc3RzIHlvdT9cbmRhdGEoKVxuXG5gYGAifQ== -->
-<pre class="r"><code>
-## Which of these? interests you?
-data()
-</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxuXG4jIyBXaGljaCBvZiB0aGVzZT8gaW50ZXJlc3RzIHlvdT9cbmRhdGEoKVxuXG5gYGBcbmBgYCJ9 -->
+<p><code>r</code>r</p>
+</div>
+</div>
+<div id="which-of-these-interests-you" class="section level2">
+<h2>Which of these? interests you?</h2>
+<p>data()</p>
+<pre><code></code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
-</div>
 <div id="graph-data" class="section level3">
 <h3>Graph Data</h3>
+<p>Let’s use the “iris” data to look at how easy it is to use R.</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibmNvbCI6NSwibnJvdyI6MTV9LCJyZGYiOiJINHNJQUFBQUFBQUFBNTFUUzA3RE1CQjFrNmIvTnZTRE9FV3pLQWRvRml4WklMcWdXNU82clVWSXFpUXRMTGtHM0tSSFFJSVZLNDZCUUFpRVZMRGptU2cxSUNSR2NwLzk1dk04RS9mNFlEeW9qV3VFRUlPWVZvRVlwdGdXRGZGVElFVlNsWGhKaU5rVkcwdXNsbGkyMjV1bTVuYXZwZDI0blR0cDkyNEgrQjVKemQxRnY4YTNnY2Q4ak92dXA1WmhHM0JQWWFiZmdEb1Z3Q3JrVitBZURVQWI4dXNhbGdFeHZnbjU2SzlvOVhjSVdxby9mRlg5WlBpaTZnemZWRkRHZjZoNjJWbjM0eG54WGQwajh6L0IrWG03LytFdDhIL2hJK0FEM0VQM3IzL0pXLy9zRisrZ0tmWFR4L0h2dGZXNFNqNWJNVDhXT3psakU5bVlKV0ZNNFZSYnNTam1YdWlIRVREVkZZOW1QT0FlMWNwWm5rOWpySlpwVEttWGlGeENObnA0UU04WmhsdEFOa1pzUVgzbmtBV3paQTVjWFhFbmZKSlJqU09XZkF0VFhENnNQRm93ajB1UkxlVnFGRjQ0cUM2SGFseXBOMkNyUVBOVGE2STJvUWwxcHBGSSthR1JjcmhJZUJpSVlnYitVL1BKaFVnajdHVWd4U2Q5Yjc0TXp2b0RLWkQ3U2sxQU83ZTNsR1FSTDRiaktva0I4SURoUkgxNnludzR0RVNUYVkvT0l1SkJncDBJTm5hU1VFd0tHZkZ0a1VsN0k1c3ZVS3Y4RVpjRUFBQT0ifQ== -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["Sepal.Length"],"name":[1],"type":["dbl"],"align":["right"]},{"label":["Sepal.Width"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["Petal.Length"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["Petal.Width"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["Species"],"name":[5],"type":["fctr"],"align":["left"]}],"data":[{"1":"5.1","2":"3.5","3":"1.4","4":"0.2","5":"setosa","_rn_":"1"},{"1":"4.9","2":"3.0","3":"1.4","4":"0.2","5":"setosa","_rn_":"2"},{"1":"4.7","2":"3.2","3":"1.3","4":"0.2","5":"setosa","_rn_":"3"},{"1":"4.6","2":"3.1","3":"1.5","4":"0.2","5":"setosa","_rn_":"4"},{"1":"5.0","2":"3.6","3":"1.4","4":"0.2","5":"setosa","_rn_":"5"},{"1":"5.4","2":"3.9","3":"1.7","4":"0.4","5":"setosa","_rn_":"6"},{"1":"4.6","2":"3.4","3":"1.4","4":"0.3","5":"setosa","_rn_":"7"},{"1":"5.0","2":"3.4","3":"1.5","4":"0.2","5":"setosa","_rn_":"8"},{"1":"4.4","2":"2.9","3":"1.4","4":"0.2","5":"setosa","_rn_":"9"},{"1":"4.9","2":"3.1","3":"1.5","4":"0.1","5":"setosa","_rn_":"10"},{"1":"5.4","2":"3.7","3":"1.5","4":"0.2","5":"setosa","_rn_":"11"},{"1":"4.8","2":"3.4","3":"1.6","4":"0.2","5":"setosa","_rn_":"12"},{"1":"4.8","2":"3.0","3":"1.4","4":"0.1","5":"setosa","_rn_":"13"},{"1":"4.3","2":"3.0","3":"1.1","4":"0.1","5":"setosa","_rn_":"14"},{"1":"5.8","2":"4.0","3":"1.2","4":"0.2","5":"setosa","_rn_":"15"}],"options":{"columns":{"min":{},"max":[10],"total":[5]},"rows":{"min":[10],"max":[10],"total":[15]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
 <p><strong>Question:</strong> Does the sepal length of an iris correlate with the petal length? <strong>Answer:</strong> Yes, with an interesting step function in the middle.</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG4jIyBXZSBjYW4gdXNlIHRoZSBwbG90IGZ1bmN0aW9uIHRvIGV4cGxvcmUgcmVsYXRpb25zaGlwcyBpbiBvdXIgZGF0YS5cblxuXG5gYGAifQ== -->
+<pre class="r"><code>
+## We can use the plot function to explore relationships in our data.
+</code></pre>
+<!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 </div>
@@ -1777,6 +1814,12 @@ data()
 <h3>Rule Data</h3>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG4jIyBXZSBjYW4gYWxzbyBqdXN0IGdvIGJhbmFuYXMgd2l0aCBwbG90IGFuZCBwbG90IGV2ZXJ5dGhpbmcgYWdhaW5zdCBldmVyeXRoaW5nLlxuIyMgUGxvdCBBTEwgVEhFIFRISU5HUyFcblxuYGBgIn0= -->
+<pre class="r"><code>
+## We can also just go bananas with plot and plot everything against everything.
+## Plot ALL THE THINGS!
+</code></pre>
+<!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 </div>
@@ -1789,9 +1832,9 @@ data()
 </ul>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyMgV2UgY2FuIGFsbCBzaGFyZSBjb2RlIHZpYSBTbGFjayFcblxuXG5gYGAifQ== -->
-<pre class="r"><code>## We can all share code via Slack!
-</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxuIyMgV2UgY2FuIGFsbCBzaGFyZSBjb2RlIHZpYSBTbGFjayFcblxuXG5gYGBcbmBgYCJ9 -->
+<p><code>r</code>r ## We can all share code via Slack!</p>
+<pre><code></code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
@@ -1801,11 +1844,20 @@ data()
 <ul>
 <li>Compare to Excel</li>
 </ul>
+</div>
+<div id="step-five" class="section level2">
+<h2>Step Five</h2>
+<ul>
+<li>Congratulations</li>
+<li>I don’t want to overwhelm you. Today, we are just getting our feet wet.</li>
+<li>How to submit this to me.</li>
+<li>Questions?</li>
+</ul>
 <!-- rnb-text-end -->
 </div>
 </div>
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiV2VlayAwMTogTGFiIgpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sKLS0tCgojIExhYjogU3F1YXJlZCBBd2F5CgojIyBTdGVwIDBuZQotIEluc3RhbGxhdGlvbi9TZXR1cCBvZiBjbGFzcyB0b29sczoKICAgIC0gTG9nIGludG8gb3VyIFZNcwogICAgLSBSLCAKICAgIC0gUlN0dWRpbywgCgpgYGB7ciBtZXNzYWdlPUZBTFNFLCBpbmNsdWRlPUZBTFNFfQoKaW5zdGFsbC5wYWNrYWdlcygib3Blbnhsc3giKQppbnN0YWxsLnBhY2thZ2VzKCJ0aWR5dmVyc2UiKQoKYGBgCgpOb3cgdGhhdCB3ZSBoYXZlIGluc3RhbGxlZCBzb21lIHRoaW5ncywgbGV0J3Mgc2VlIHdoYXQgd2UgaGF2ZS4KCmBgYHtyfQpkYXRhLmZyYW1lKGluc3RhbGxlZC5wYWNrYWdlcygpKQpgYGAKCiMjIFN0ZXAgVHdvCi0gUlN0dWRpbyBJbnRybwogICAgLSBXaGF0IGlzIGFuIElERT8KICAgIC0gUlN0dWRpbyBUb3VyCiAgICAtIFVzaW5nIEhlbHAKICAgIC0gKio/PyBRdWVzdGlvbnMgPz8qKgotIFRoaW5ncyB5b3UgY2FuIGRvIHdpdGggUgogICAgLSBBIHJhdGhlciB1c2VmdWwgY2FsY3VsYXRvcgogICAgLSBWaWV3IGRhdGEKICAgIC0gR3JhcGggZGF0YQogICAgLSBSdWxlIHlvdSBkYXRhIQoKIyMjIFI6IEEgcmF0aGVyIHVzZWZ1bCBjYWxjdWxhdG9yCgpgYGB7cn0KCiMjIEhvdyB0byB1c2UgUiBhcyBhIGNhbGN1bGF0b3IuCgoKYGBgCgojIyMgVmlldyBkYXRhCgpgYGB7cn0KCiMjIFdoaWNoIG9mIHRoZXNlPyBpbnRlcmVzdHMgeW91PwpkYXRhKCkKCmBgYAoKCiMjIyBHcmFwaCBEYXRhCgoqKlF1ZXN0aW9uOioqIERvZXMgdGhlIHNlcGFsIGxlbmd0aCBvZiBhbiBpcmlzIGNvcnJlbGF0ZSB3aXRoIHRoZSBwZXRhbCBsZW5ndGg/CioqQW5zd2VyOioqIFllcywgd2l0aCBhbiBpbnRlcmVzdGluZyBzdGVwIGZ1bmN0aW9uIGluIHRoZSBtaWRkbGUuCgpgYGB7cn0KCmBgYAoKCiMjIyBSdWxlIERhdGEKCmBgYHtyfQoKYGBgCgojIyBTdGVwIFRocmVlCi0gUXVlc3Rpb25zPwotIENvbmNlcm5zPwoKYGBge3J9CiMjIFdlIGNhbiBhbGwgc2hhcmUgY29kZSB2aWEgU2xhY2shCgoKYGBgCgoKIyMgU3RlcCBGb3VyCi0gQ29tcGFyZSB0byBFeGNlbA==</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiV2VlayAwMTogTGFiIgpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sKLS0tCgojIExhYjogU3F1YXJlZCBBd2F5CgojIyBTdGVwIFplcm8KLSBXcml0ZSBzb21lIGNvZGUhCi0gIkhlbGxvIFdvcmxkIiBpcyBhIHRpbWUtaG9ub3JlZCBmaXJzdCBzdGVwIHlvdSBzaG91bGQgdGFrZSBpbiBBTlkgcHJvZ3JhbW1pbmcKICBsYW5ndWFnZS4KICAKYGBge3J9CiMjIEhlbGxvIFdvcmxkIQoKCmBgYAoKCiMjIFN0ZXAgMG5lCi0gSW5zdGFsbGF0aW9uL1NldHVwIG9mIGNsYXNzIHRvb2xzOgogICAgLSBMb2cgaW50byBvdXIgVk1zCiAgICAtIFIsIAogICAgLSBSU3R1ZGlvLCAKCmBgYHtyIG1lc3NhZ2U9RkFMU0UsIGluY2x1ZGU9RkFMU0V9CgppbnN0YWxsLnBhY2thZ2VzKCJvcGVueGxzeCIpCmluc3RhbGwucGFja2FnZXMoInRpZHl2ZXJzZSIpCgpgYGAKCk5vdyB0aGF0IHdlIGhhdmUgaW5zdGFsbGVkIHNvbWUgdGhpbmdzLCBsZXQncyBzZWUgd2hhdCB3ZSBoYXZlLgoKYGBge3J9CmRhdGEuZnJhbWUoaW5zdGFsbGVkLnBhY2thZ2VzKCkpCmBgYAoKIyMgU3RlcCBUd28KLSBSU3R1ZGlvIEludHJvCiAgICAtIFdoYXQgaXMgYW4gSURFPwogICAgLSBSU3R1ZGlvIFRvdXIKICAgIC0gVXNpbmcgSGVscAogICAgLSAqKj8/IFF1ZXN0aW9ucyA/PyoqCi0gVGhpbmdzIHlvdSBjYW4gZG8gd2l0aCBSCiAgICAtIEEgcmF0aGVyIHVzZWZ1bCBjYWxjdWxhdG9yCiAgICAtIFZpZXcgZGF0YQogICAgLSBHcmFwaCBkYXRhCiAgICAtIFJ1bGUgeW91IGRhdGEhCgojIyMgUjogQSByYXRoZXIgdXNlZnVsIGNhbGN1bGF0b3IKCmBgYHtyfQoKIyMgSG93IHRvIHVzZSBSIGFzIGEgY2FsY3VsYXRvci4KCgpgYGAKCiMjIyBWaWV3IGRhdGEKCmBgYHtyfQoKIyMgV2hpY2ggb2YgdGhlc2U/IGludGVyZXN0cyB5b3U/CmRhdGEoKQoKYGBgCgoKIyMjIEdyYXBoIERhdGEKCkxldCdzIHVzZSB0aGUgImlyaXMiIGRhdGEgdG8gbG9vayBhdCBob3cgZWFzeSBpdCBpcyB0byB1c2UgUi4KCmBgYHtyfQpkYXRhKGlyaXMpCmhlYWQoaXJpcywgMTUpCmBgYAoKCioqUXVlc3Rpb246KiogRG9lcyB0aGUgc2VwYWwgbGVuZ3RoIG9mIGFuIGlyaXMgY29ycmVsYXRlIHdpdGggdGhlIHBldGFsIGxlbmd0aD8KKipBbnN3ZXI6KiogWWVzLCB3aXRoIGFuIGludGVyZXN0aW5nIHN0ZXAgZnVuY3Rpb24gaW4gdGhlIG1pZGRsZS4KCmBgYHtyfQoKIyMgV2UgY2FuIHVzZSB0aGUgcGxvdCBmdW5jdGlvbiB0byBleHBsb3JlIHJlbGF0aW9uc2hpcHMgaW4gb3VyIGRhdGEuCgoKYGBgCgoKIyMjIFJ1bGUgRGF0YQoKYGBge3J9CgojIyBXZSBjYW4gYWxzbyBqdXN0IGdvIGJhbmFuYXMgd2l0aCBwbG90IGFuZCBwbG90IGV2ZXJ5dGhpbmcgYWdhaW5zdCBldmVyeXRoaW5nLgojIyBQbG90IEFMTCBUSEUgVEhJTkdTIQoKYGBgCgojIyBTdGVwIFRocmVlCi0gUXVlc3Rpb25zPwotIENvbmNlcm5zPwoKYGBge3J9CiMjIFdlIGNhbiBhbGwgc2hhcmUgY29kZSB2aWEgU2xhY2shCgoKYGBgCgoKIyMgU3RlcCBGb3VyCi0gQ29tcGFyZSB0byBFeGNlbAoKIyMgU3RlcCBGaXZlCi0gQ29uZ3JhdHVsYXRpb25zCi0gSSBkb24ndCB3YW50IHRvIG92ZXJ3aGVsbSB5b3UuIFRvZGF5LCB3ZSBhcmUganVzdCBnZXR0aW5nIG91ciBmZWV0IHdldC4KLSBIb3cgdG8gc3VibWl0IHRoaXMgdG8gbWUuCi0gUXVlc3Rpb25zPw==</div>
 
 
 
