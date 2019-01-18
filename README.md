@@ -1,11 +1,12 @@
-# Syllabus - Intro To Data (Class)
+# Syllabus - Intro To Data
 - **Instructor:** Andy Choens, MSW
 - **Course Name - Number:** Intro to Data - PBH210 & PBH211
-- **Course Location - Time:** Thursday 18:30 - ~20:00
+- **Course Location - Time:** Thursday 18:30 - ~21:30
 - **Office Hours and Location:** Available on request - Slack/Email is easiest
 - **Contact Information:**
     - Phone: (518) 275 - 5984
     - Email: Andrew.Choens@acphs.edu
+- **Slack Workspace:** acphsintrotodata
 
 > Mathematics is the language in which God has written the universe.
 >
@@ -149,12 +150,12 @@ The lab portion of the class will be graded separately from the class.
 | Assignments         | Assign Date | Due Date   | % Final Grade    |
 |:------------        |:-----------:|:----------:|-----------------:|
 | Class Participation | 2019-01-17  | 2019-05-09 |             5%   | 
-| Homework 1          | 2019-01-24  | 2019-01-31 |             5%   |
-| Homework 2          | 2019-02-07  | 2019-02-21 |            10%   |
+| Assignment 01       | 2019-01-24  | 2019-01-31 |             5%   |
+| Assignment 02       | 2019-02-07  | 2019-02-21 |            10%   |
 | Midterm Exam        |             | 2019-03-07 |            25%   |
-| Homework 3          | 2019-03-21  | 2019-03-28 |            10%   |
-| Homework 4          | 2019-04-11  | 2019-04-18 |            10%   |
-| Homework 5          | 2019-04-18  | 2019-04-25 |            10%   |
+| Assignment 03       | 2019-03-21  | 2019-03-28 |            10%   |
+| Assignment 04       | 2019-04-11  | 2019-04-18 |            10%   |
+| Assignment 05       | 2019-04-18  | 2019-04-25 |            10%   |
 | Final Exam          |             | 2019-05-02 |            25%   |
 | Total               |             |            |           100%   |
 : Intro to Data Assignments
@@ -213,6 +214,7 @@ encounter a concept - you won't learn this material.
   - Compare R to Excel
   - Sampling
 - **Homework:**
+    - Assignment 01
     - [HOPR: Project 2 - Playing Cards](https://rstudio-education.github.io/hopr/project-2-playing-cards.html)
     - [HOPR: R Objects](https://rstudio-education.github.io/hopr/r-objects.html)
     - [HOPR: R Notation](https://rstudio-education.github.io/hopr/r-notation.html)
@@ -228,6 +230,7 @@ encounter a concept - you won't learn this material.
   - Simple intro to Tidy Data
   - Importing Excel/CSV
   - Compare R to Excel
+- **Due:** Assignment 01
 - **Homework:**
   - [R For Data Science (R4DS): Welcome](http://r4ds.had.co.nz/index.html)
   - [R4DS: Introduction (1)](http://r4ds.had.co.nz/introduction.html)
@@ -244,6 +247,7 @@ encounter a concept - you won't learn this material.
   - Working Directory
   - Compare R to Excel
 - **Homework:** 
+    - Assignment 02
     - [R4DS: Workflow Basics](http://r4ds.had.co.nz/workflow-basics.html)
     - [R4DS: Data Transformation](http://r4ds.had.co.nz/transform.html)
     - [Tidy Data by Hadley Wickham](https://www.jstatsoft.org/article/view/v059i10)
@@ -267,6 +271,7 @@ encounter a concept - you won't learn this material.
 
 ## Week 06 - 2019-02-21
 - **Topics:** Exploratory Data Analysis
+- **Due:** Assignment 02
 -  **Homework:** 
     - [R4DS: Relational data](http://r4ds.had.co.nz/relational-data.html)
         - Read this one a couple of times. It isn't easy.
@@ -326,12 +331,14 @@ readings are actually quite entertaining.
     - How I Met Your ~~Mother~~ Package
     - Revisiting: The Working Directory
 - **Homework:**
+    - Assignment 03
     - [Tidyverse Packages](https://www.tidyverse.org/packages/)
         - I do _NOT_ expect you to read everthing here. Just look over
           the page and get a sense of what is available.
 
 ## Week 10 - 2019-03-28
 - **Topics:** Tell Me Straight - Does It Fit?
+- **Due:** Assignment 03
 - **Homework:** 
     - [Is Most Published Research Wrong?](https://www.youtube.com/watch?v=42QuXLucH3Q)
         - Possibly - Yes
@@ -359,33 +366,38 @@ readings are actually quite entertaining.
 
 ## Week 12 - 2019-04-11:
 - **Topics:** Lasso Your Future :robot_face:
--  **Homework:** 
+  - Ethical Analysis 1
+  - More Bootstrapping: Risk Ratios
+  - Lasso
+-  **Homework:**
+    - Assignment 04
     - [How Machines Learn](http://flowingdata.com/2017/12/20/how-machines-learn/)
     - [Wikipedia: Lasso](https://en.wikipedia.org/wiki/Lasso_(statistics))
     - [Do Scientists Feel Pressure To Produce Positive Results?](http://earthsky.org/human-world/do-scientists-feel-pressure-to-produce-positive-results)
-- Ethical Analysis 1
-- More Bootstrapping: Risk Ratios
-- Lasso
+
     
 ## Week 13 - 2019-04-18:
 - **Topics:** Can't See The Forest For All These Trees
+  - Ethical Analysis 2
+  - More About Machine Learning :robot_face:
+  - Decision Trees
+  - Random Forests
+      - The relationship between the random Forest and bootstrapping
+- **Due:** Assignment 04
 - **Homework:** 
+    - Assignment 05
     - [Learning To Fool Our Algorithmic Spies](https://nytimes.com/2018/01/09/magazine/learning-to-fool-our-algorithmic-spies.html?referer=http://digg.com/)
     - [How Open Source Can Fight Algorithmic Bias](https://opensource.com/article/18/1/how-open-source-can-fight-algorithmic-bias)
-- Ethical Analysis 2
-- More About Machine Learning :robot_face:
-- Decision Trees
-- Random Forests
-    - The relationship between the random Forest and bootstrapping
 
 ## Week 14 - 2019-04-25:
 - **Topics:** From Soup To Nuts
+  - _Use_ the Analytical Template
+  - Choose Your Own Adventure
+- **Due:** Assignment 05
 -  **Homework:** 
     - [We Used Broadband Data We Shouldn't Have, Here's What Went Wrong](https://fivethirtyeight.com/features/we-used-broadband-data-we-shouldnt-have-heres-what-went-wrong/)
     - [Can You Use This Data Set to Find Serial Killers?](http://www.slate.com/articles/health_and_science/science/2017/12/the_data_behind_the_serial_killer_detector_has_some_small_issues.html)
     - [Exploring the ChestXray14 dataset: problems](https://lukeoakdenrayner.wordpress.com/2017/12/18/the-chestxray14-dataset-problems/)
-- _Use_ the Analytical Template
-- Choose Your Own Adventure
 
 ## Final Exam - 2019-05-02
 - The final exam includes complimentary pizza.
