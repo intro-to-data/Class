@@ -1,0 +1,80 @@
+---
+title: "Week 02: Vectors"
+output:
+  html_notebook:
+    toc: true
+    toc_depth: 2
+---
+
+This is your first "independent" lab. The expectation is that you complete this
+lab as an individual. But, you may use any/all of the following resources:
+
+- Your copy of past lecture notes.
+- Other members of the class.
+- Andy
+- Google/Stack Overflow/etc.
+
+If you have R/RStudio installed on your laptop you are welcome to move to one of
+the group tables in the back. Before you leave - please submit the lab to me via
+Slack as a direct message. Please include Lab 1 from last week as well.
+
+If you have any questions - please ask me.
+
+# Task: Demonstrate how to use R as a calculator.
+- Replace YOUR "CODE HERE!" below with a new code chunk.
+- Create two variables - you call them what you want.
+- Get the value of the first variable by rolling a dice.
+- Get the value of the second variable by rolling a dice.
+- Return (tell me) the difference in the value between variable one and two.
+- *Pro Tip:* A vaiable name cannot contain a space or start with a number.
+
+YOUR CODE HERE!
+
+# Task: Create Rolls1
+- Create a vector called rolls1.
+- This vector should have 10 values. Use your dice to come up with the values.
+- In other words - roll dice to have values of a variable.
+- Remember, names are case-sensitive.
+
+YOUR CODE HERE!
+
+# Task: Create Rolls2
+- Create a vector called rolls2.
+- This vector should have 10 values. Use your dice to come up with the values.
+- In other words - roll dice to have values of a variable.
+- Remember, names are case-sensitive.
+
+YOUR CODE HERE!
+
+# Task: Compare the average (mean) of rolls1 and rolls2
+- Create a variable mean1 which is the mean of rolls1.
+- Create a variable mean2 which is the mean of rolls2.
+- What is the difference?
+
+YOUR CODE HERE!
+
+Discuss why you think the averages were different.
+
+# Task: Which entries in rolls1 are less than 5?
+- Using a boolean test, return those values of rolls1 which have a value less
+  than 5.
+  
+YOUR CODE HERE!
+
+# Task: Lots of rolls!
+
+- Run the following code.
+
+```{r}
+big_rolls1 <- sample(1:6, 100, replace = TRUE)
+big_rolls2 <- sample(1:6, 100, replace = TRUE)
+```
+
+- Review the values in big_rolls1 and big_rolls2.
+- Find the difference in the mean value of rolls1 and rolls2.
+- Is the difference between big_rolls1 and big_roll2 greater than or less than
+  the difference between rolls1 and rolls2? Why?
+  
+  YOUR CODE HERE!
+  
+  YOUR EXPLANATION HER! (This should not be a code chunk.)

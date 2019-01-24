@@ -1,0 +1,346 @@
+---
+title: "Week 02: Vectors"
+output:
+  html_notebook:
+    toc: true
+    toc_depth: 2
+---
+
+# Introduction
+- Welcome back, blah, blah, blah.
+- If you haven't already done so, please put your artistically designed name-banner-thing out where I can see it to help me call you by your actual name.
+- Tonight's goals: 
+    - Review what we learned last week
+    - Introduce a core R concept called the vector
+    - Getting Help
+    - Discuss some sampling concepts
+     - But it all starts with a little detour down data type lane
+
+# Last Week Tonight (Without John Oliver)
+
+## Using R As A Calculator
+
+```{r}
+## Example: Create two variables, a and b.
+## Then add them together.
+a <- 1
+b =  2
+c <- a + b
+c
+```
+
+- Although `<-` is the canonical assignment operator, `=` works.
+- R, and most other programming languages _are_ case sensitive.
+    - Some languges such as SAS and SQL are not.
+    - R, Python, C, etc are case sensitive.
+```{r eval=FALSE}
+# Do you understand why this fails?
+A
+```
+    
+- If you see code using `<<-`, and don't know what terms like global variable and scoping mean - run away.
+- *Note:* I am giving you my lecture notes, to help you learn both R and Markdown.
+    - Render the output, hit the Preview button above.
+    - Are there any questions about how to run a code chunk?
+    - Are there any questions about the RStudio IDE?
+    - Does anyone want to order some pizza?
+
+# Data Types (Which We Want To Discuss Today)
+
+- Numeric
+- Character
+    - Factor
+- Logical
+
+## Numeric
+
+```{r eval=FALSE}
+## Create a variable called my_age. 
+## Assign it a value of your age (or how old you feel).
+my_age <-
+
+```
+
+Arithmetic is straightforward
+- Addition: `+`
+- Subtraction: `-`
+- Multiplication: `*`
+- Division: `/`
+- Exponentiation: `^`
+
+
+## Character/Factor
+
+- Mostly, things that are not numbers.
+- Names, Gender, Race, Favorite Color, Address of nearest McDonald's
+
+```{r eval=FALSE}
+## Create a variable called my_name.
+## Assign it a value of your name.
+
+my_name <-
+    
+```
+
+- A factor is a special type of character, which we will learn more about, which
+  has repetitive values.
+- Sometimes referred to as a string variable. I tend to use these terms
+  interchangeably.
+- Example: Each of you has, I presome, a different home address. That
+  information would be stored as a character.
+- But things like gender, race, and years in school would be stored as factors.
+    - We will do more with this, I promise.
+    - If we don't, blame someone else.
+
+```{r}
+## Addition doesn't work with characters. But you can paste.
+## This is called concatenation in many other languages.
+foo <- "a"
+bar <- "b"
+
+paste(foo, bar, sep = " | ")
+
+```
+
+## Logicals
+- Logical | Boolean | Whatever
+- These are "protected" words - if you spell them right.
+- True must be spelled `TRUE` or `T`.
+- False must be spelled `FALSE` or `F`.
+- I prefer to spell them out.
+    - Even if you are a terrible typist, the additional effort is unlikely to 
+      harm you, much.
+- All other spellings are just chacters.
+    - `True`, `False` are not `TRUE`, `FALSE`.
+- You can apply Boolean Logic in your code.
+- The following code chunks use the variables `a`, `b`, `c`, `foo`, and `bar` 
+  defined above. If you haven't run those code chunks, do that before running 
+  the code below.
+
+```{r}
+## Tests of equality
+a == b
+a != b
+```
+
+```{r}
+## More tests of equality
+foo == bar
+foo != bar
+```
+
+```{r}
+## We can do other tests.
+a > b
+c <= a
+```
+
+- Equals: `==`
+    - (Remember, =, is a just a hipster assignment operator.)
+- Less Than: `<`, `<=`
+- Greater Than: `>`, `>=`
+- Not Equal: `!=`
+- All logic tests return the value of TRUE, FALSE, or NA.
+- Useful things to know!
+    - TRUE has a numeric value of 1.
+    - FALSE has a numeric value of 0.
+
+```{r}
+a <- 1
+b <- 2
+a > b
+```
+
+Some functions return logicals.
+
+```{r}
+is.numeric(a)
+is.character(foo)
+is.numeric(bar)
+```
+
+# Vectors
+- At long last - the point of this lecture!
+- Everything in R is an "object". One type of "object" is called a vector.
+- In fact, we have already created many vectors, I just called them variables.
+    - `a`, `b`, `c`, `foo`, and `bar` are all vectors, length == 1.
+
+```{r}
+## Play around with this. Using the other variables we have made, do you ever
+## get different results?
+is.vector(foo)
+length(a)
+```
+
+Fortunately, vectors can have lengths longer than one.
+
+```{r}
+## We can make a vector of numbers as a sequence.
+a <- 1:15
+a
+
+## Feel free to play the song.
+b <- c(8,6,7,5,3,0,9)
+b
+
+## Question: How can we find out what "c" means and how to use it?
+## I'm looking for two answers. Via the IDE and via the REPL.
+
+## Or we can create a vector as output from another function:
+c <- sample(1:6, 33, replace = TRUE)
+c
+```
+
+Please note that these vectors are shown as part of or global environment. From
+there, we can learn more about them.
+
+```{r}
+## Can you tell me the length of b and c?
+length(a)
+```
+
+## OMG Excel
+- We can do something similar in Excel. Let's open Excel and create these vectors
+  in Excel.
+  
+## Atomic
+- Welcome back. R kept the coffee warm and tasty.
+- In R - vectors are sometimes referred to as "atomic vectors". In R a vector is 
+  defined as a one dimensional (length) object of the same type. Above - we 
+  created numeric vectors. But a vector can be made of any SINGLE data type.
+
+```{r}
+## This is both silly and rather pointless, but it works.
+foo <- c("a", "b", "c", "three")
+length(foo)
+```
+
+```{r}
+## This also works works, but it does something.
+## Any idea what this does?
+bar <- c("a", "b", 8)
+bar
+```
+
+Fortunately, there is a lot we can do with a vector.
+- Math
+- Functions
+- Plotting
+
+```{r}
+## Math
+## Compare a to a+1
+a
+a + 1
+```
+
+```{r}
+## Functions
+## Many functions in R can accept a vector as a parameter.
+## Remember, your results may differ a little because we built this randomly.
+table(c)
+```
+
+```{r}
+## Plotting
+## Again - your results may differ.
+plot(as.factor(c))
+```
+
+*Question:* What kind of a plot is this and what kind of data would we use it 
+on?
+
+- Oops. This might be a good time to stop and discuss what a factor is.
+- These are a special type of character vector.
+- They have a finite number of types - like grade level, favorite football team,
+  etc. They are not endlessly variable (address) or continuous (height).
+- The `plot` function operates based on the TYPE of data passed to it. Because 
+  `c` is a vector of numbers - it would try to scatter plot them. But, in this 
+  case, `c` is better represented by a histogram and the way to trigger that is 
+  to tell `plot` to convert c to a factor.
+
+## Some Functions
+
+Time for a moment of independent study.
+
+| Mathematical              | Useful                |
+|:--------------------------|:----------------------|
+| Average: `mean()`         | # Items: `length()`   |
+| Standard Deviation: `sd()`| Crosstab: `table()`   |
+| Variance: `var()`         | What?: `summary()     |
+| Smallest: `min()`         | Crosstab: `plot()`    |
+| Biggest: `max()`          | Histogram: `hist()`   |
+|                           | Barplot: `barplot()`
+
+*Questions?* Speak Now!
+
+## Basic Indexing on Vectors
+- Sometimes we don't want to use _every_ entry in a vector. Sometimes, we only
+  want to use a subset of them.
+
+```{r}
+## Indexing!
+## Always using the square bracket operator
+c[1:3]
+```
+
+- This is nice for demonstrative purposes.
+- Much more useful is to apply boolean logic to vectors. 
+
+## Boolean Logic On Vectors
+We can even do boolean tests on our vectors:
+
+```{r}
+c > 3
+```
+
+```{r}
+table(c > 3)
+```
+
+We can also apply boolean tests to get only those values we want!
+
+```{r}
+c[c > 3]
+```
+
+We can use Boolean logic with other data types, like characters.
+
+```{r}
+gender <- sample(c("Foo", "Bar", "Baz"), 24, replace = TRUE) 
+gender[gender != "Baz"]
+```
+
+And , it might not seem obvious, but this works too!
+
+```{r}
+## Oh yes, we can!
+gender[gender > "Baz"]
+```
+
+## Getting Help
+- ?foo
+- Code Completion
+- RStudio help window
+- [Stack Overflow](http://stackoverflow.com/questions/tagged/r)
+- Google: Pre-pend search query with "R"
+- [Quick-R (Stat Methods)](https://www.statmethods.net/index.html)
+- [RStudio Cheatsheets](https://www.rstudio.com/resources/cheatsheets/)
+
+## Difference Between Sample and Population
+
+The vector, `c`, is a random sample of values between 1 and 6. 
+
+```{r}
+## Let's create a new sample
+c <- sample(1:6, 20, replace = TRUE)
+```
+
+Each entry in this vector has an equally random chance of being 1, 2, 3, 4, 5, 
+or 6. In theory, the odds for each number are equal and are equal to:
+
+```{r}
+1/6*100
+```
+
+*Question:* So what is the difference between a sample and a population?
