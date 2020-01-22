@@ -1,0 +1,32 @@
+---
+title: "Week 01 Lecture"
+output:
+  ioslides_presentation:
+    widescreen: true
+    smaller: true
+---
+
+# Intro To Data Science
+
+Lecture, Goals, etc.
+
+
+## Tasks:
+- Please complete your name poster!
+- Introductions
+- 
+
+# Data Science In One Image
+
+- Data Science is an interdisciplinary "fourth paradigm" of science.
+- Read from Syllabus.
+- There is a PDF if you would like it. Materials will be here on GitHub: [github.com/intro-to-data/Class](https://github.com/intro-to-data/Class)
+
+```{r echo=FALSE, out.width='100%'}
+knitr::include_graphics("https://raw.githubusercontent.com/intro-to-data/Class/master/includes/Data_Science_VD.png")
+```
+
+Source: [DrewConway.com/zia/2013/3/26/the-data-science-venn-diagram](http://drewconway.com/zia/2013/3/26/the-data-science-venn-diagram)
+
+- Review Remainder of Syllabus
+- **?? QUESTIONS ??**

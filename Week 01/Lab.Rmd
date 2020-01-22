@@ -1,0 +1,118 @@
+---
+title: "Week 01: Lab"
+output: html_notebook
+---
+
+# Lab: Squared Away
+
+## Step Zero
+- Write some code!
+- "Hello World" is a time-honored first step you should take in ANY programming
+  language.
+  
+```{r}
+## Hello World!
+
+
+```
+
+
+## Step 0ne
+- Installation/Setup of class tools:
+    - Log into our VMs
+    - R, 
+    - RStudio, 
+
+```{r message=FALSE, include=FALSE}
+
+install.packages("openxlsx")
+install.packages("tidyverse")
+
+```
+
+Now that we have installed some things, let's see what we have.
+
+```{r}
+data.frame(installed.packages())
+```
+
+## Step Two
+- RStudio Intro
+    - What is an IDE?
+    - RStudio Tour
+    - Using Help
+    - **?? Questions ??**
+- Things you can do with R
+    - A rather useful calculator
+    - View data
+    - Graph data
+    - Rule you data!
+
+### R: A rather useful calculator
+
+```{r}
+
+## How to use R as a calculator.
+
+
+```
+
+### View data
+
+```{r}
+
+## Which of these? interests you?
+data()
+
+```
+
+
+### Graph Data
+
+Let's use the "iris" data to look at how easy it is to use R.
+
+```{r}
+data(iris)
+head(iris, 15)
+```
+
+
+**Question:** Does the sepal length of an iris correlate with the petal length?
+**Answer:** Yes, with an interesting step function in the middle.
+
+```{r}
+
+## We can use the plot function to explore relationships in our data.
+
+
+```
+
+
+### Rule Data
+
+```{r}
+
+## We can also just go bananas with plot and plot everything against everything.
+## Plot ALL THE THINGS!
+
+```
+
+## Step Three
+- Questions?
+- Concerns?
+
+```{r}
+## We can all share code via Slack!
+
+
+```
+
+
+## Step Four
+- Compare to Excel
+
+## Step Five
+- Congratulations
+- I don't want to overwhelm you. Today, we are just getting our feet wet.
+- How to submit this to me.
+- Questions?
