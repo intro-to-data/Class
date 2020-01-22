@@ -1,9 +1,0 @@
-# Lecture
-- _Use_ the Analytical Template
-- Choose Your Own Adventure
-    - SHINY
-    - Mapping In R
-    - An programming challenge
-
-# Lab : TODO
-    - TODO

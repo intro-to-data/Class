@@ -1,7 +1,0 @@
-# Lecture
-- There is no final exam.
-- Come for the :pizza:, stay for the adventure!
-- Good Luck on your other finals.
-
-# Lab : TODO
-    - TODO

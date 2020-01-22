@@ -1,7 +1,0 @@
-# Lecture
-- Ethical Analysis 1
-- More Bootstapping: Risk Ratios
-- Lasso
-
-# Lab: TODO
-    - TODO
