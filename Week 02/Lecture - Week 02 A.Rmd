@@ -1,0 +1,148 @@
+---
+title: "Collect It Yourself"
+author: "Andy Choens"
+date: "Week 02"
+output:
+  ioslides_presentation:
+    widescreen: true
+    smaller: true
+---
+
+```{r setup, echo=FALSE, warning=FALSE, message=FALSE}
+#library(emojifont)
+```
+
+## Tonight
+
+<div style="float:left; width:49%">
+- Name Tags!
+   - Put them up if you haven't already done so. 
+   - Please
+- First Half:
+   - Collect It Yourself!
+   - Discuss the data science workflow (high-level).
+   - Install packages needed for class.
+- Bathroom Break
+- Second Half:
+   - Some basic review from our lab.
+   - Introduction to data visualization.
+   - Introduction to GGPlot.
+</div>
+
+<div style="float:right; text-align:center; width:49%">
+<img src="https://cran.r-project.org/Rlogo.svg" width="50%">
+</div>
+
+
+# Collect It Yourself
+
+<div style="margin:auto; text-align:right;">
+<img src="https://imgs.xkcd.com/comics/the_data_so_far.png" align="right">
+</div>
+
+
+## Assignment 01: Collect It Yourself!
+
+1. The class will decide on a survey topic to ask your fellow students.
+2. The class will determine how to collect the data, etc.
+3. The class will determine what the survey questions are, how to target, etc.
+4. The class will determine what demographic features, etc. to include.
+5. The class will determine how to determine who to survey, etc.
+6. Individually collect 10 rows of survey data.
+   - This depends largely on the previous decisions
+
+## Some rules/caveats:
+
+* You must collect data from other students. Not each other.
+* Include demographic, or other data which is related to the survey question so
+we can stratify results.
+* Avoid hot-button topics like politics, etc.
+* Each row of submitted data must have a SurveyID.
+   * Data collected must be anonymous. 
+   * SurveyID:
+      * **Example:** Andy Choens -> AC1, AC2 . . . . AC10.
+* <span style="color:red">**WARNING:** We will use this data in a later lab.</span>
+
+# Topic Ideas?
+
+<div style="margin:auto; text-align:right;">
+<img src="https://imgs.xkcd.com/comics/the_data_so_far.png" align="right">
+</div>
+
+## Operationalize
+
+1. ~~The class will decide on a survey topic to ask your fellow students.~~
+2. The class will determine how to collect the data, etc.
+   - Google Forms?
+   - Microsoft Forms?
+   - Survey Monkey
+3. The class will determine what the survey questions are, how to target, etc.
+   - We don't have to do all of this tonight.
+4. The class will determine what demographic features, etc. to include.
+   - Thoughts?
+5. The class will determine how to determine who to survey, etc.
+   - Thoughts?
+   
+This conversation SHOULD continue in the discussion forum.
+
+## Warning: This isn't easy
+
+> The bad news is that when ever you learn a new skill your going to suck. It’s
+going to be frustrating. The good news is that is typical and happens to
+everyone and it is only temporary. You can’t go from knowing nothing to becoming
+an expert without going through a period of great frustration and great
+suckiness.
+**Hadley Wickham**
+
+
+# Data Life Cycle
+
+<div style="margin:auto; float:right; text-align:right;">
+<img src="https://d33wubrfki0l68.cloudfront.net/571b056757d68e6df81a3e3853f54d3c76ad6efc/32d37/diagrams/data-science.png">
+</div>
+
+
+## Data Life Cycle
+
+![](https://d33wubrfki0l68.cloudfront.net/571b056757d68e6df81a3e3853f54d3c76ad6efc/32d37/diagrams/data-science.png)
+
+<table><tr><td width="50%">
+**Before Spring Break:**
+
+- Import: `read_csv`, `read_excel`, web-scraping, SQL, etc.
+- Clean Up: `dplyr`, `tidyr`
+- Transform: `dplyr`
+</td><td width="50%">
+**After Spring Break:**
+
+- Model
+- Communicate
+</td></tr></table>
+
+## R Setup
+
+- This installs the tidyverse for your local user. 
+- You need only do this once. This will take a second.
+
+```{r eval=FALSE}
+install.packages("tidyverse")
+```
+
+
+## R Setup (2)
+
+- Load the tidyverse into your current R session. 
+- You must load it in EACH session to use tidyverse functions.
+- The `tidyverse` is a metapackage.
+
+```{r}
+library(tidyverse)
+```
+
+
+
+# 10 Minute Break {data-background="" data-background-size="15%"}
+
+<div style="margin:auto; text-align:right;">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Wooden_hourglass_3.jpg/237px-Wooden_hourglass_3.jpg" align="right">
+</div>

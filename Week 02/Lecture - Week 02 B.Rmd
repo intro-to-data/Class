@@ -1,0 +1,456 @@
+---
+title: "Introduction to GGPlot"
+author: "Andy Choens"
+date: "Week 02"
+output:
+  ioslides_presentation:
+    widescreen: TRUE
+    smaller: TRUE
+runtime: shiny
+---
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+
+## INIT ========================================================================
+library(tidyverse)
+
+## DATA ========================================================================
+url <- "https://raw.githubusercontent.com/intro-to-data/Data/master/2020/ClassSurvey.csv"
+Survey <- read_csv(url)
+if(nrow(Survey) < 2) stop("Surely we need to have more than two rows of data!")
+names(Survey) <- gsub(".*: ","",names(Survey))
+Survey <- Survey %>%
+        select(-name,
+               -id,
+               -sis_id,
+               -section_sis_id,
+               -`1`,    -`1_1`,  -`1_2`,
+               -`1_3`,  -`1_4`,  -`1_5`,
+               -`1_6`,  -`1_7`,  -`1_8`,
+               -`1_9`,  -`1_10`, -`1_11`,
+               -`1_12`, -`1_13`, -`1_14`)
+```
+
+
+
+# Welcome Back
+
+<div style="margin:auto; text-align:right;">
+<img src="https://imgs.xkcd.com/comics/drinking_fountains.png" align="right" width="50%">
+</div>
+
+
+## Libraries
+
+```{r}
+## If you reset R/RStudio . . . . 
+library(tidyverse)
+```
+
+
+## Some Data (1)
+
+- R comes with many datasets built-in.
+- This is a data frame, a two-dimensional structure.
+- Each column is a vector.
+- To learn more about this data set, `?mpg`
+
+```{r}
+## The first command _will_ fail if you haven't loaded the tidyverse.
+data(mpg)
+head(mpg)
+```
+
+
+## Some Data (2)
+
+- We can look at this data in Excel:
+
+```{r eval=FALSE}
+## But first we need another package:
+install.packages("clipr")
+```
+
+```{r, eval=FALSE}
+library(clipr)
+write_clip(mpg)
+```
+
+- Now, paste this into Excel (Ctrl+v).
+- Can you figure out how to apply a filter to the data?
+
+
+## Vectors (1)
+  
+- You can use the `$` operator to access a column.
+
+```{r}
+mpg$manufacturer
+```
+
+
+## Vectors (2)
+
+**Filter:**
+
+```{r}
+mpg$manufacturer[ mpg$model == "a4" ]
+```
+
+**Math:**
+
+```{r}
+mean( mpg$cty )
+```
+
+## Questions?
+
+- Any questions from the first lab. 
+- Any questions from the material we've covered thus far?
+- Yes, the meaning of life _is_ 42.
+
+# Stories, From Data
+
+<div style="margin:auto; text-align:right;">
+<img src="https://imgs.xkcd.com/comics/data.png" alt="OMG" align="right" width="50%">
+</div>
+
+
+## Data Visualization Skillz!
+
+One of the most important skills you can learn is how to effectively understand
+data visually. To do so, you must first understand when to use different kinds
+of data visualizations.
+
+[https://www.data-to-viz.com/](https://www.data-to-viz.com/)
+
+You should bookmark this URL. This thing is GREAT.
+
+## Remember the "Class Survey"?
+
+- If you don't, let's think about it some more . . . now.
+- Also, I didn't realize I had set so many of the survey questions to have a "right" answer. So, that is awkward.
+
+<img src="https://raw.githubusercontent.com/intro-to-data/Lectures/master/Week%2002/awkward.png" align="center" width = "100%">
+
+## What year are you in at ACPHS?
+
+- Select the option that best describes where you are in your educational
+journey.
+   - 1st Year (Freshman)
+   - 2nd Year (Sophmore)
+   - 3rd Year (Junior)
+   - 4th Year (Senior)
+   - 5+ (You like it here)
+   - 999 (Grad School)
+
+What would be the best way to show this data?
+
+- As a table?
+- As a chart?
+
+## What year are you in at ACPHS? (1)
+
+### Crosstab
+
+```{r}
+## Don't worry about the code right now. We will learn how to do this.
+## Also, the column names coming out of the Canvas tool are, challenging.
+Survey %>% 
+  group_by(Year = `What year are you in at ACPHS?\nSelect the option that best describes where you are in your educational journey.`) %>% 
+  summarize(N = n()) %>% 
+  mutate("%" = round(100*N/sum(N),1))
+
+```
+
+
+## What year are you in at ACPHS? (2)
+
+### Visualized, Counts
+
+```{r}
+## Don't worry about the code right now. We will learn how to do this.
+## Also, the column names coming out of the Canvas tool are, challenging.
+ggplot(Survey, mapping = aes(x = `What year are you in at ACPHS?\nSelect the option that best describes where you are in your educational journey.`)) +
+  labs(y = "Count", x="Year In School") +
+  geom_bar(fill="darkred")
+```
+
+## What year are you in at ACPHS? (2)
+
+### Visualized, Percent
+
+```{r}
+## Don't worry about the code right now. We will learn how to do this.
+## Also, the column names coming out of the Canvas tool are, challenging.
+ggplot(Survey, mapping = aes(x = `What year are you in at ACPHS?\nSelect the option that best describes where you are in your educational journey.`)) +
+  geom_bar(aes(y = 100*(..count..)/sum(..count..)), fill="darkred") +
+  labs(y = "Percent", x="Year In School") +
+  ylim(0,100)
+```
+
+## What is your current age? (1)
+
+- Provide an integer answer (no decimals or fractions).
+
+- As a table?
+- As a chart?
+
+## What is your current age? (2)
+
+### Crosstab
+
+```{r}
+## Don't worry about the code right now. We will learn how to do this.
+## Also, the column names coming out of the Canvas tool are, challenging.
+Survey %>% 
+  group_by("Current Age" = `What is your current age?\nProvide an integer answer (no decimals or fractions).`) %>% 
+  summarize(N = n()) %>% 
+  mutate("%" = round(100*N/sum(N),1))
+
+```
+
+
+## What is your current age? (3)
+
+### Visualized, Counts
+
+```{r}
+## Don't worry about the code right now. We will learn how to do this.
+## Also, the column names coming out of the Canvas tool are, challenging.
+ggplot(Survey, mapping = aes(x = `What is your current age?\nProvide an integer answer (no decimals or fractions).`)) +
+  geom_histogram(fill="darkred")
+```
+
+
+## What is your current age? (4)
+
+### Visualized, Density
+
+```{r}
+## Don't worry about the code right now. We will learn how to do this.
+## Also, the column names coming out of the Canvas tool are, challenging.
+ggplot(Survey, mapping = aes(x = `What is your current age?\nProvide an integer answer (no decimals or fractions).`)) +
+  geom_density(fill="darkred")
+```
+
+
+## What is your current age By Year in School (1)
+
+- What if I wanted to compare (visually) the age of students by their year in
+school?
+- How could I do that?
+
+
+## What is your current age By Year in School (2)
+
+### Visualized, Boxplot
+
+```{r}
+## Don't worry about the code right now. We will learn how to do this.
+## Also, the column names coming out of the Canvas tool are, challenging.
+ggplot(Survey, mapping = aes(x = factor(`What year are you in at ACPHS?\nSelect the option that best describes where you are in your educational journey.`), y = `What is your current age?\nProvide an integer answer (no decimals or fractions).`)) +
+  geom_boxplot(color="darkred") +
+  geom_jitter(width = 0.2) +
+  labs(x = "Year in School", y = "Age In Year")
+```
+
+
+## Graphically Lieing
+
+<div style="text-align:center">
+<img src="https://raw.githubusercontent.com/intro-to-data/Lectures/master/Week%2002/weight2.jpeg" width="75%">
+</div>
+
+- Don't overstate change. This is often done with percentages.
+
+# GGPLOT
+
+<div style="margin:auto; text-align:right;">
+<img src="https://cran.r-project.org/Rlogo.svg" align="right" width="50%">
+</div>
+
+
+## Load Your library
+
+```{r}
+library(tidyverse)
+```
+
+- Now that we've thought about the KINDS of graphs we can do, let's actually
+draw some.
+
+## Graphing
+
+```{r out.width="60%"}
+## This is slightly different from what is shown in the book.
+ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) + 
+  geom_point(color = "blue")
+```
+
+## A Tale of Two Axes
+
+- What do we call the variable on the X Axis?
+- What do we call the valiable on the Y Axis?
+- What are we implying about these two factors?
+
+```{r echo=FALSE, out.width="60%"}
+ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) + 
+  geom_point(color = "blue", size = 2)
+```
+
+
+## Bar Graphs (N Count)
+
+```{r echo=FALSE, out.width="60%"}
+# Note the difference between color and fill.
+ggplot(data = mpg, mapping = aes(x = manufacturer)) + 
+    geom_bar(fill = "royalblue") +
+    labs(x = "Manufacturer", y = "Count") +
+    theme(axis.text.x = element_text(angle = 90, hjust = 1, vjust = .45))
+```
+
+
+## Histogram (1)
+
+```{r echo=FALSE, out.width="60%"}
+# Note the difference between color and fill.
+# bins defaults to 30 There is no perfect right answer.
+ggplot(data = mpg, mapping = aes(x = cty)) + 
+    geom_histogram(bins = 10, fill = "darkgreen", color="lightgray", size=1.5)
+```
+
+## Histogram (2)
+
+- `geom_histogram` has a variable called `bins`, which sets the number of bars
+in the histogram.
+- This is different from a bar chart, where the number of bars is determined
+on the number of factors in the columns.
+- How do we know what to set the bins to?
+
+There are standards:
+
+- [https://en.wikipedia.org/wiki/Histogram#Number_of_bins_and_width](https://en.wikipedia.org/wiki/Histogram#Number_of_bins_and_width)
+- Square-root choice: `r sqrt(length(mpg$cty))`
+this case.)
+- Sturges' formula (<img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/c020d823eb7a197d7db70bc66f8189c2ed7782b8">): `r log2(length(mpg$cty))+1`
+- And on, and on, and on.
+- With this many standards, you may be forgiven for thinking there is no
+standard.
+- And you would be right. The question is really this - what are you trying to
+show about the distribution of the data?
+
+## Histogram (3)
+
+```{r echo=FALSE, out.width="60%"}
+
+sliderInput("n_breaks", "Number of bins:",
+              min = 0, max = 100, value = 10, step = 10)
+
+renderPlot({
+  ggplot(data = mpg, mapping = aes(x = cty)) + 
+    geom_histogram(bins = input$n_breaks, fill = "gray50", color="green", size=1.5)
+  })
+```
+
+## Density Plot (1)
+
+```{r echo=FALSE, out.width="60%"}
+## Can I have a round of applause for this color
+ggplot(data = mpg, mapping = aes(x = cty)) + 
+    geom_density(fill = "palegreen4", alpha = .5, size=1.5)
+```
+
+
+## Density Plot (2)
+
+- These have a similar "challenge".
+- Although they seem simple, the smoothing bandwidth has a similar affect on the
+resulting graph.
+- However, the "standard" is a bit more of a standard.
+- [https://en.wikipedia.org/wiki/Kernel_density_estimation#A_rule-of-thumb_bandwidth_estimator](https://en.wikipedia.org/wiki/Kernel_density_estimation#A_rule-of-thumb_bandwidth_estimator)
+
+
+## Density Plot (3)
+
+```{r echo=FALSE, out.width="60%"}
+
+sliderInput("bw", "Smoothing Bandwidth:",
+              min = 0, max = 2, value = 1, step = .125)
+
+renderPlot({
+    ggplot(data = mpg, mapping = aes(x = cty)) + 
+        geom_density(fill = "palegreen4", alpha = .5, size=1.5, bw = input$bw)
+  })
+```
+
+
+## Scatter Plots
+
+```{r out.width="60%"}
+ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) + 
+  geom_point(color = "tomato2", size = 2)
+```
+
+- It is work revisiting: What is the X-Axis and what is the Y-Axis?
+
+## Regression Line
+
+```{r out.width="70%"}
+ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) + 
+   geom_point(color = "steelblue", size = 2) +
+   geom_smooth(method = "lm", color="maroon", size = 1.5)
+```
+
+
+## Facets
+
+```{r out.width="70%"}
+ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) + 
+   geom_point(color = "steelblue", size = 2) +
+   geom_smooth(method = "lm", color="maroon", size = 1.5) +
+   facet_wrap(~class, nrow = 2)
+```
+
+## Correlation Plot
+
+```{r}
+## Slightly tougher
+library(GGally)
+ggcorr(mpg, label = TRUE)
+```
+
+- This was not in the book.
+- But it is useful.
+- We need to unpack this a little. First, what is this telling us and how might
+it be useful?
+
+```{r}
+cor(mpg$cty, mpg$hwy)
+```
+
+
+## Useful
+
+<div style="float:left; width:45%;">
+
+```{r}
+colors()
+```
+
+</div>
+
+<div style="float:right; width:45%;">
+
+```{r}
+data()
+```
+
+</div>
+
+## Useful Links:
+
+- [https://www.tidyverse.org/](https://www.tidyverse.org/)
+- [https://ggplot2.tidyverse.org/index.html](https://ggplot2.tidyverse.org/index.html)
+
+# Questions?
