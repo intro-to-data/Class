@@ -2,6 +2,9 @@ stuff.md
 temp.md
 todo.org
 .Rhistory
-Class.Rproj
-.Rproj*
+*.Rproj*
 .Rproj.user
+.Rprofile
+TODO.*
+*.nb.html
+*.html
