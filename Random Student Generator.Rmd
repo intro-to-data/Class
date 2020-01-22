@@ -1,0 +1,25 @@
+---
+title: "Random Student Generator"
+output: ioslides_presentation
+---
+
+## Of students in the class:
+
+```{r echo=FALSE, results='asis'}
+silent <- TRUE
+students <- c("Kelsey","Nicolina","Faisal",
+              "Lynne","Julia",    "Se Han",
+              "Rima", "Morgan",   "Jenny",
+              "John", "Wioletta", "Faith",
+              "Sarah","Nicole",   "Patrick", "Saima")
+if (!silent){
+    # If the variable silent is false, give us some extra info. Else, don't.
+    cat(paste("There are", length(students), "students in the class!"))
+}
+```
+
+```{r echo=FALSE, results='asis'}
+cat(paste("\n1. You should ask **", sample(students, 1), "** for help.", sep=""))
+cat(paste("\n2. As a fallback, ask **", sample(students, 1), "** for help.", sep=""))
+```
+
