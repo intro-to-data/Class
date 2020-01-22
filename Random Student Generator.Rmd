@@ -1,6 +1,10 @@
 ---
 title: "Random Student Generator"
-output: ioslides_presentation
+author: Andy \"Do I want to take credit for this?\" Choens
+output:
+  ioslides_presentation:
+    widescreen: true
+runtime: shiny
 ---
 
 ## Of students in the class:
