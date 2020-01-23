@@ -15,18 +15,19 @@ output:
 ## Tonight
 
 <div style="float:left; width:49%">
-- Name Tags!
+- Name Cards!
    - Put them up if you haven't already done so. 
    - Please
 - First Half:
    - Collect It Yourself!
    - Discuss the data science workflow (high-level).
-   - Install packages needed for class.
+   - Install packages needed for class/tonight.
+   - Discuss our class situation (number of seats, etc.)
 - Bathroom Break
 - Second Half:
    - Some basic review from our lab.
    - Introduction to data visualization.
-   - Introduction to GGPlot.
+   - Introduction to `GGPlot`.
 </div>
 
 <div style="float:right; text-align:center; width:49%">
@@ -39,6 +40,12 @@ output:
 <div style="margin:auto; text-align:right;">
 <img src="https://imgs.xkcd.com/comics/the_data_so_far.png" align="right">
 </div>
+
+
+## Collecting Data
+
+- Who collects data?
+- Why do they collect data?
 
 
 ## Assignment 01: Collect It Yourself!
@@ -92,7 +99,7 @@ going to be frustrating. The good news is that is typical and happens to
 everyone and it is only temporary. You can’t go from knowing nothing to becoming
 an expert without going through a period of great frustration and great
 suckiness.
-**Hadley Wickham**
+**--Hadley Wickham**
 
 
 # Data Life Cycle
@@ -121,25 +128,51 @@ suckiness.
 
 ## R Setup
 
-- This installs the tidyverse for your local user. 
+- This installs the `tidyverse` for your local user. 
 - You need only do this once. This will take a second.
 
 ```{r eval=FALSE}
+## We will use the tidyverse nearly every day.
+
+## You MUST use quotes when installing a package.
 install.packages("tidyverse")
+
+## This is just for this lecture.
+install.packages("GGally")
+
+## As we go, you may need to install/load other packages.
 ```
 
 
 ## R Setup (2)
 
-- Load the tidyverse into your current R session. 
-- You must load it in EACH session to use tidyverse functions.
+- Load the `tidyverse` into your current R session. 
+- You must load it in EACH session to use `tidyverse` functions.
 - The `tidyverse` is a metapackage.
 
 ```{r}
+## You do not need to use quotes when loading a package.
+## ¯\_(ツ)_/¯
 library(tidyverse)
 ```
 
 
+# Data Scientist/Analyst v Data Consumer
+
+- Most of you do not intend to become data scientists.
+   - Fine
+- But how many of you want to make a difference?
+- There are two sides to this data coin:
+   - Scientist/Analyst
+   - Consumer
+- Few academic articles are ever read by those who make the decisions.
+- When those who consume data know how to collaborate with their
+scientists/analysts, change is much easier and is more likely to be data-drive.
+   - Those of you who don't want to be scientists/analysts, I hope to make you
+   better consumers.
+
+
+# Class Situation (Chairs)
 
 # 10 Minute Break {data-background="" data-background-size="15%"}
 

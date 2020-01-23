@@ -1,5 +1,5 @@
 ---
-title: "Introduction to GGPlot"
+title: "Introduction to `GGPlot`"
 author: "Andy Choens"
 date: "Week 02"
 output:
@@ -151,7 +151,7 @@ What would be the best way to show this data?
 
 ## What year are you in at ACPHS? (1)
 
-### Crosstab
+### Cross tab
 
 ```{r}
 ## Don't worry about the code right now. We will learn how to do this.
@@ -198,7 +198,7 @@ ggplot(Survey, mapping = aes(x = `What year are you in at ACPHS?\nSelect the opt
 
 ## What is your current age? (2)
 
-### Crosstab
+### Cross tab
 
 ```{r}
 ## Don't worry about the code right now. We will learn how to do this.
@@ -244,7 +244,7 @@ school?
 
 ## What is your current age By Year in School (2)
 
-### Visualized, Boxplot
+### Visualized, Box plot
 
 ```{r}
 ## Don't worry about the code right now. We will learn how to do this.
@@ -256,7 +256,7 @@ ggplot(Survey, mapping = aes(x = factor(`What year are you in at ACPHS?\nSelect 
 ```
 
 
-## Graphically Lieing
+## Graphically Lying
 
 <div style="text-align:center">
 <img src="https://raw.githubusercontent.com/intro-to-data/Lectures/master/Week%2002/weight2.jpeg" width="75%">
@@ -291,7 +291,7 @@ ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) +
 ## A Tale of Two Axes
 
 - What do we call the variable on the X Axis?
-- What do we call the valiable on the Y Axis?
+- What do we call the variable on the Y Axis?
 - What are we implying about these two factors?
 
 ```{r echo=FALSE, out.width="60%"}
@@ -349,7 +349,7 @@ sliderInput("n_breaks", "Number of bins:",
 
 renderPlot({
   ggplot(data = mpg, mapping = aes(x = cty)) + 
-    geom_histogram(bins = input$n_breaks, fill = "gray50", color="green", size=1.5)
+    geom_histogram(bins = input$n_breaks, fill = "darkgreen", color="lightgray", size=1.5)
   })
 ```
 
