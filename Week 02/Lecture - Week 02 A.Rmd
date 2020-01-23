@@ -19,6 +19,7 @@ output:
    - Put them up if you haven't already done so. 
    - Please
 - First Half:
+   - Lab 01
    - Collect It Yourself!
    - Discuss the data science workflow (high-level).
    - Install packages needed for class/tonight.
@@ -33,6 +34,11 @@ output:
 <div style="float:right; text-align:center; width:49%">
 <img src="https://cran.r-project.org/Rlogo.svg" width="50%">
 </div>
+
+
+## Lab 01
+
+Let us discuss.
 
 
 # Collect It Yourself
