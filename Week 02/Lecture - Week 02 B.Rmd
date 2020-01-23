@@ -256,7 +256,7 @@ ggplot(Survey, mapping = aes(x = factor(`What year are you in at ACPHS?\nSelect 
 ```
 
 
-## Graphically Lying
+## Are You Telling The Truth With Your Data?
 
 <div style="text-align:center">
 <img src="https://raw.githubusercontent.com/intro-to-data/Lectures/master/Week%2002/weight2.jpeg" width="75%">
@@ -279,6 +279,9 @@ library(tidyverse)
 
 - Now that we've thought about the KINDS of graphs we can do, let's actually
 draw some.
+- The slides go into great detail regarding how to graph this data in
+R/`GGplot`. And we have put the data into Excel. Help me remember to show you
+how to do a graph or two in Excel before the night is over. It isn't hard.
 
 ## Graphing
 
