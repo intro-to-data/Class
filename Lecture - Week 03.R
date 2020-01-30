@@ -80,6 +80,9 @@ ggplot(data = Mpg, aes(x = CityFECF)) +
     geom_density() +
     facet_wrap(~MfrName)
 
+ggplot(data = Mpg, aes(x = FuelUsageCF, y = CityFECF, color = FuelUsageCF )) +
+    geom_boxplot()
+
 Tmp <- Mpg %>% filter(MfrName == "Honda")
 ggplot(data = Tmp, aes(x = Carline)) +
     geom_bar() +
@@ -93,6 +96,8 @@ Mpg %>%
     group_by(MfrName) %>%
     summarize(MeanCityFECF = mean(CityFECF),
               SDCityFECF   = sd(CityFECF))
+
+
 
 ## DPLYR Transformations (Single Table)
 ## - filter
