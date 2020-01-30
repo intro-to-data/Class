@@ -1,0 +1,176 @@
+---
+title: "Transformations & EDA"
+author: "Andy Choens"
+date: "Week 03"
+output:
+  ioslides_presentation:
+    widescreen: TRUE
+    smaller: TRUE
+#runtime: shiny
+---
+
+
+## Load Your Libs!
+
+```{r}
+library(tidyverse)
+library(readxl)
+```
+
+
+## Project
+
+- Create a folder to hold all of your code/projects for this course.
+- I would put your lecture notes into a folder each week (for
+downloaded data, scripts, etc.)
+- I call my folder `Intro To Data`.
+- You can call your folder anything you please.
+- In this folder, you should have a folder for each lecture and each lab.
+- I recommend something obvious like Lecture 03. But again, you do you.
+
+
+## MPG
+
+- We have used a dataset called mpg for a couple of porpoises:
+
+```{r echo=FALSE}
+data(mpg)
+head(mpg) %>% knitr::kable()
+```
+
+- This dataset has `r nrow(mpg)` rows of data and `r ncol(mpg)` columns.
+- These "toy" datasets are cute, but let's go get a real data set.
+
+## MPG, But Bigger (1)
+
+### [https://www.fueleconomy.gov/](https://www.fueleconomy.gov/)
+
+The US Federal Government still publishes annual estimates for the mileage of 
+cars sold in the US each year. Let's download the 2020 numbers.
+
+- At the bottom of the page: "Download EPA's MPG Ratings"
+- We found the data. What else should we be looking for?
+
+
+## MPG, But Bigger (2)
+
+Always look for documentation to help you understand the: 
+
+- content of the data (columns)
+- sampling/inclusion/exclusion criteria (as relevant/appropriate)
+- how much data is there (this goes back to 1978)
+- caveats, changes in the data over time.
+- Any aggregations we can use to validate our analyses.
+
+We will download the 2020 data. But down't go clickig anything just yet.
+
+## MPG, But Bigger (3)
+
+You are using a project now, aren't you?
+
+```{r eval=FALSE}
+## Use variables. It is easier to read and more flexible.
+data_url <- "https://www.fueleconomy.gov/feg/epadata/20data.zip"
+local_file <- "mpg20.zip"
+
+download.file(url = data_url, destfile = local_file)
+unzip(local_file)
+dir(pattern="xlsx")
+```
+
+- Feel free to open the data in Excel
+- What do you see?
+- What would you like to know?
+
+<span style="color:red">STOP ME NOW if you are having trouble!</span>
+
+## MPG, But Bigger (3)
+
+Let's import the data and look at it.
+
+```{r}
+data_file <- dir(pattern="xlsx")
+Mpg <- read_excel(data_file)
+head(Mpg)
+```
+
+# Column Names (1)
+
+- Those column names are not going to be easy to work with.
+- But they do contain useful info.
+- It is a bad practice to throw out information.
+- So, we will create an attribute of Mpg to hold the originals.
+
+```{r}
+names(Mpg)
+
+attributes(Mpg)$labels <- names(Mpg)
+```
+
+
+# Column Names (2)
+
+- Now we can fix those column names.
+- There are 162 columns in this data. We _could_ change the columns this way:
+
+```{r eval=FALSE}
+names(Mpg) <- c("ModelYear", "MfrName", "Division", "Carline")
+```
+
+OMG, you will be here all night doing this. Let's automate it.
+
+## Column Names (3)
+
+```{r}
+col_names <- names(Mpg)
+
+## Generic Changes
+col_names <- gsub("- Conventional Fuel", "", col_names, fixed=TRUE)
+col_names <- gsub("- Alternative Fuel", "", col_names, fixed=TRUE)
+col_names <- gsub(" ", "", col_names, fixed=TRUE)
+col_names <- gsub(".", "", col_names, fixed=TRUE)
+col_names <- gsub("?", "", col_names, fixed=TRUE)
+col_names <- gsub(",", "", col_names, fixed=TRUE)
+col_names <- gsub("-", "", col_names, fixed=TRUE)
+col_names <- gsub("%", "", col_names, fixed=TRUE)
+col_names <- gsub("#", "N", col_names, fixed=TRUE)
+
+# Specific Tweaks
+col_names[6] <- "Indexed"
+col_names[10] <- "CityFECF"
+col_names[11] <- "CityFECF"
+col_names[12] <- "CombFECF"
+col_names[13] <- "CityUnadjFECF"
+col_names[14] <- "HwyUnadjFECF"
+col_names[15] <- "CombUnadjFECF"
+col_names[16] <- "CityUnrdUnadjFECF"
+col_names[17] <- "HwyUnrdUnadjFECF"
+col_names[18] <- "CombUnrdUnadjFECF"
+col_names[19] <- "Guzzler"
+col_names[30] <- "MaxEthanolGasoline"
+col_names[31] <- "MaxBiodiesel"
+col_names[32] <- "Range1CF"
+col_names[33] <- "FuelUsageCF"
+col_names[151] <- "MoneySaved5Year"
+col_names[152] <- "MoneySpend5Year"
+col_names[157] <- "ChargeTimeat240volts"
+col_names[158] <- "ChargeTimeat120volts"
+col_names[159] <- "PHEVRange"
+
+## How can we change:
+## [46] "EPA Calculated Annual Fuel Cost  -----  Annual fuel cost error. Please revise Verify."  
+
+names(Mpg) <- col_names
+```
+
+## EDA
+
+- We are going to do a choose your own adventure here.
+- The goal: 
+   - Look for patterns. 
+   - Look for centrality. 
+   - Look for outliers.
+- In doing this, we will introduce some graphs AND some transformations.
+- This will serve as your intro to dplyr and a review of ggplot.
+- You will never stop learning about programming.
+   - Never

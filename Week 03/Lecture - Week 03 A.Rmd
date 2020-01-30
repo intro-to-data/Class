@@ -1,0 +1,182 @@
+---
+title: "Scripts & Projects"
+author: "Andy Choens"
+date: "Week 03"
+output:
+  ioslides_presentation:
+    widescreen: TRUE
+    smaller: TRUE
+#runtime: shiny
+---
+
+```{r echo=FALSE,message=FALSE, warning=FALSE}
+library(tidyverse)
+```
+
+
+## Tonight
+
+<div style="float:left; width:49%">
+- Name Cards!
+- First Half:
+   - Collect It Yourself!
+   - Workflow Basics
+     - Scripts
+     - Projects
+- Bathroom Break
+- Second Half:
+   - Data Management Is Hard
+      - Download/Import Data
+   - What is Tidy Data?
+   - Plotting
+      - Why? What are we looking for?
+      - Let's do one or two.
+      - Structure of a good GGPlot.
+   - Introductions to Data Transformations
+</div>
+
+<div style="float:right; text-align:center; width:49%">
+<img src="https://cran.r-project.org/Rlogo.svg" width="50%">
+</div>
+
+
+## Collect It Yourself!
+
+### Status Update
+
+- Have we started data collection?
+- Do we have a viable data submission/management system?
+- Are we being consistent in how we ask the questions, etc?
+- Concerns from anyone in the class?
+
+
+
+# Workflow Basics
+
+<div style="float:right; text-align:center; width:49%">
+<img src="https://imgs.xkcd.com/comics/automation.png" width="90%">
+</div>
+
+
+## Scripts
+
+- **Console/REPL v Script:** What is the difference?
+
+
+## Projects (1)
+
+- What is a R Project?
+- What is the R Working Directory?
+- How are they the same/different?
+
+<br />
+<span style="color:red"><b>Hint:</b> This next part is going to be important 
+for this week's lab.</span>
+
+## Settings
+
+- To make your scripts reproducible, you should not save state from session to 
+  session.
+- In a formal research setting, why would this be important?
+- RStudio will open to your last project, but your session state will be clean.
+
+<div style="float:center; margin-left:auto; margin-right:auto; text-align:center; width:50%">
+<img src="https://d33wubrfki0l68.cloudfront.net/7fa44a5471d40025344176ede4169c5ad3159482/1577f/screenshots/rstudio-workspace.png" width="85%">
+</div>
+
+
+## Projects (2)
+
+### Where Are You?
+
+- Go to `Session`, `Restart R`
+- In the Console, run `getwd()` and `dir()`.
+- Go to that folder with the file browser.
+  - Are the contents of this folder consistent with what R showed you?
+- Note: RStudio tells you this info in the GUI:
+
+<div style="float:center; margin-left:auto; margin-right:auto; text-align:center; width:50%">
+<img src="https://d33wubrfki0l68.cloudfront.net/176fc11b0b484209bd77f13ab5116b8a0d7aa13a/2b6f7/screenshots/rstudio-wd.png" width="65%">
+</div>
+
+### Prove It:
+
+- Go to [xkcd.com](https://www.xkcd.com) in your browser.
+- Find the path to today's comic.
+- Download this file, using `download.file()`.
+- Can you now see this file in your file browser?
+
+## Current Working Directory (CWD) v Project
+
+- You can set the CWD to be ANYTHING.
+- I recommend: 
+   - Create a project-specific folder.
+   - Then eiter manuall change R's CWD or create a project.
+   - To the extent you have variables which have paths to files, you want them 
+   relative the a project-specific file folder so others can also run your code.
+- This idea of relative versus absolute paths is often confusing to new 
+programmers.
+- Which is why we are going to do a demo.
+
+## Demo "Project" (1)
+
+- Create a new project called `I Told You So`
+  - We can use RStudio to create this new folder.
+- You should have a completely blank session.
+- Enter/run the following code:
+
+```{r eval=FALSE}
+library(tidyverse)
+data(mpg) # You should have 234 rows of data in mpg
+write_csv(x = mpg, path = "all_mpg.csv")
+
+# This will reduce mpg to the first 6 rows.
+data(mpg) <- head(mpg)
+dim(mpg)
+```
+
+- Now, close Rstudio.
+- Put the .R file I sent you into this folder.
+
+## Demo "Project" (1)
+
+- Re-open RStudio.
+- You should have NOTHING in your Golobal Environment.
+- Run `ls()`, `getwd()`, `dir()`
+- After everyone has done so, enter/run the following code:
+
+```{r eval=FALSE}
+library(tidyverse)
+read_csv("all_mpg.csv")
+
+dim(mpg)
+
+# Do you like the color "rosy brown"?
+ggplot(mpg, aes(displ, hwy)) +
+    geom_point(color = "rosybrown3")
+```
+
+- The `mpg` data should have more than 6 rows again.
+- This simple code only worked because everyone put the file in the root folder 
+of a project.
+
+
+## Summary
+
+- Stolen literally right out of our text.
+- RStudio projects give you a solid workflow that will serve you well in the future.
+- Create an RStudio project for each data analysis project.
+- Keep data files there; we’ll talk about loading them into R in data import.
+- Keep scripts there; edit them, run them in bits or as a whole.
+- Save your outputs (plots and cleaned data) there.
+- Only ever use relative paths, not absolute paths.
+
+Everything you need is in one place, and cleanly separated from all the other 
+projects that you are working on.
+
+
+# <span style="color:red">10 Minute Break</span> {data-background="" data-background-size="15%"}
+
+<div style="margin:auto; text-align:right;">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Wooden_hourglass_3.jpg/237px-Wooden_hourglass_3.jpg" align="right">
+</div>
