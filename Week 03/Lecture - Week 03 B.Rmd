@@ -94,7 +94,26 @@ Mpg <- read_excel(data_file)
 head(Mpg)
 ```
 
-# Column Names (1)
+## STOP!
+
+## Let's talk about grain.
+
+- Wheat
+- Quinoa
+- Spelt
+- Oat
+
+No, seriously, is this data "tidy" and what is the grain of this data?
+
+
+## Grain, Why It Matters
+
+Could we use this data to discuss the average mileage:
+
+- of all cars on the road?
+- of all cars sold in 2020
+
+## Column Names (1)
 
 - Those column names are not going to be easy to work with.
 - But they do contain useful info.
@@ -108,7 +127,7 @@ attributes(Mpg)$labels <- names(Mpg)
 ```
 
 
-# Column Names (2)
+## Column Names (2)
 
 - Now we can fix those column names.
 - There are 162 columns in this data. We _could_ change the columns this way:

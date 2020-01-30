@@ -20,6 +20,8 @@ library(tidyverse)
 - Name Cards!
 - First Half:
    - Collect It Yourself!
+   - Homework, Lab, When
+   - library(nycflights)
    - Workflow Basics
      - Scripts
      - Projects
@@ -42,12 +44,26 @@ library(tidyverse)
 
 ## Collect It Yourself!
 
+
 ### Status Update
 
 - Have we started data collection?
 - Do we have a viable data submission/management system?
 - Are we being consistent in how we ask the questions, etc?
 - Concerns from anyone in the class?
+
+
+
+## Homework, Lab, When
+
+
+## library(nycflights)
+
+If `library(nycflights)` fails, you just need to install it.
+
+```{r}
+install.packages("nycflights")
+```
 
 
 
