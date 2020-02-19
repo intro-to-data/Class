@@ -2,6 +2,7 @@ stuff.md
 temp.md
 todo.org
 .Rhistory
+*.db
 *.Rproj*
 .Rproj.user
 .Rprofile
