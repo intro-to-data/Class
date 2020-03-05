@@ -25,7 +25,7 @@ Genres         <- dbReadTable(con, "genres") %>% as_tibble()
 InvoiceItems   <- dbReadTable(con, "invoice_items") %>% as_tibble()
 Invoices       <- dbReadTable(con, "invoices") %>% as_tibble()
 MediaTypes     <- dbReadTable(con, "media_types") %>% as_tibble()
-PaylistsTracks <- dbReadTable(con, "playlist_track") %>% as_tibble()
+PlaylistsTracks <- dbReadTable(con, "playlist_track") %>% as_tibble()
 Playlists      <- dbReadTable(con, "playlists") %>% as_tibble()
 Tracks         <- dbReadTable(con, "tracks") %>% as_tibble()
 dbDisconnect(con)
@@ -97,7 +97,7 @@ Tracks %>%
     head(25)
 
 
-## Join Playlists to PaylistsTracks
+## Join Playlists to PlaylistsTracks
 ## Show how many tracks are in each playlist.
 
 

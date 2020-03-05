@@ -11,7 +11,8 @@ library(DBI)
 
 ## DATA =======================================================================
 download.file(url = "https://github.com/intro-to-data/Data/raw/master/chinook.db",
-              destfile = "chinook.db")
+              destfile = "chinook.db",
+              mode = "wb")
 con <- dbConnect(RSQLite::SQLite(), dbname = "chinook.db")
 dbListTables(con)
 
@@ -23,7 +24,7 @@ Genres         <- dbReadTable(con, "genres") %>% as_tibble()
 InvoiceItems   <- dbReadTable(con, "invoice_items") %>% as_tibble()
 Invoices       <- dbReadTable(con, "invoices") %>% as_tibble()
 MediaTypes     <- dbReadTable(con, "media_types") %>% as_tibble()
-PaylistsTracks <- dbReadTable(con, "playlist_track") %>% as_tibble()
+PlaylistsTracks <- dbReadTable(con, "playlist_track") %>% as_tibble()
 Playlists      <- dbReadTable(con, "playlists") %>% as_tibble()
 Tracks         <- dbReadTable(con, "tracks") %>% as_tibble()
 dbDisconnect(con)
@@ -116,17 +117,17 @@ Tracks %>%
     kable() %>%
     head(25)
 
-## Join Playlists to PaylistsTracks
+## Join Playlists to PlaylistsTracks
 ## Show how many tracks are in each playlist.
 Playlists %>%
-    inner_join(PaylistsTracks, by = "PlaylistId") %>%
+    inner_join(PlaylistsTracks, by = "PlaylistId") %>%
     group_by(PlaylistId, Name) %>%
     count()
 
 ## What are the names of Playlists with 25 or more tracks?
 ## You can reuse your previous code.
 Playlists %>%
-    inner_join(PaylistsTracks, by = "PlaylistId") %>%
+    inner_join(PlaylistsTracks, by = "PlaylistId") %>%
     group_by(PlaylistId, Name) %>%
     count() %>%
     filter(n >= 25)
