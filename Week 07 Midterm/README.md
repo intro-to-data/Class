@@ -285,6 +285,7 @@ ggplot(NoShowRate, aes()) + geom_col()
 <!-- end list -->
 
 ``` r
+## Task 08: Distribution of No-Shows
 NoShowCounts <-
     Appointments
 
@@ -310,6 +311,8 @@ ggplot(NoShowCounts, aes()) +
 
 ``` r
 ## Task 09: New Column Over50
+## There's no code stub, but your code
+## should create a new copy of Appointments.
 ```
 
 ## Task 10: Upload your code
@@ -317,5 +320,12 @@ ggplot(NoShowCounts, aes()) +
   - Upload your .R file.
   - Please and thank you.
   - Have a great spring break.
+
+<!-- end list -->
+
+``` r
+## Task 10: Upload your code
+## You don't really need to write any code here.
+```
 
 ![](https://imgs.xkcd.com/comics/convincing.png)

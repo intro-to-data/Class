@@ -311,6 +311,7 @@ ggplot(NoShowRate, aes(Diabetes, R)) + geom_col(fill = "blue")
     - Skewed
 
 ```{r eval = FALSE}
+## Task 08: Distribution of No-Shows
 NoShowCounts <-
     Appointments
 
@@ -345,6 +346,8 @@ ggplot(NoShowCounts, aes(n)) +
 
 ```{r eval = FALSE}
 ## Task 09: New Column Over50
+## There's no code stub, but your code
+## should create a new copy of Appointments.
 
 ```
 
@@ -367,5 +370,10 @@ Appointments %>%
 - Upload your .R file.
 - Please and thank you.
 - Have a great spring break.
+
+```{r eval = FALSE}
+## Task 10: Upload your code
+## You don't really need to write any code here.
+```
 
 ![](https://imgs.xkcd.com/comics/convincing.png)
