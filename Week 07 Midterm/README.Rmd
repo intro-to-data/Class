@@ -2,7 +2,7 @@
 title: "Midterm: No Shows"
 output:
   md_document:
-    variant: markdown_github
+    variant: gfm
 ---
 
 
