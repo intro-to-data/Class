@@ -5,7 +5,7 @@ thus far in our time together. As with all other tasks in this course, I
 am going to treat you like programmers, with a few caveats. To complete
 the tasks in this exam, you may use the following:
 
-  - Any/all class lecture notes, labs, cheatsheets from RStudio, etc.
+  - Any/all class lecture notes, labs, cheat sheets from RStudio, etc.
   - The book for this class: <https://r4ds.had.co.nz/>
   - Google (If you are really desperate, Bing.)
   - Stack Overflow
@@ -87,18 +87,18 @@ head(Appointments)
     ## #   Diabetes <lgl>, Alcoholism <lgl>, Handcap <lgl>, ReceivedSMS <lgl>,
     ## #   NoShow <lgl>
 
-Remember, you must load your packages (tidyverse, etc.) and data for
-EACH session in R. Just beause you had tidyverse loaded last time means
-very little until you load it for the current session.
+Remember, you must load your packages (`tidyverse`, etc.) and data for
+EACH session in R. Just beause you had the `tidyverse` loaded last time
+means nothing for the current session.
 
 **Hint:** Run all of the preceding code.
 
 # Appointments
 
-A no-show appointment occurs when a patient makes a doctor appointment,
-receives all of the instructions, and does not come to their
-appointment. Understanding the likelihood of a patient skipping their
-appointment is helpful for providers and their staff.
+A no-show appointment occurs when a patient makes an appointment with
+their doctor, receives all of the instructions, and does not come to
+their appointment. Understanding the likelihood of a patient skipping
+their appointment is helpful for providers and their staff.
 
 Although this data set is specific to Brazil and is taken from Kaggle,
 this is a very real problem we work on here in the Capital District.
@@ -134,9 +134,9 @@ have more than one appointment. (Many do.)
       - Note the unusual spelling of this column.
   - ReceivedSMS: Did the patient receive a SMS? TRUE or FALSE
   - NoShow: Did the patient no-show? TRUE or FALSE
-      - **Hint:** R treats boolean TRUE values as equal to 1 and boolean
-        FALSE values as equal to 0. You can sum a column of TRUE/FALSE
-        values to get the count of TRUE.
+      - **Hint:** R treats Boolean TRUE values as equal to 1 and FALSE
+        values as equal to 0. You can sum a column of TRUE/FALSE values
+        to get the count of TRUE.
 
 # Remember:
 
@@ -234,11 +234,11 @@ Appointments %>%
 
 ## Task 07: Chronic Conditions
 
-  - Create a new table, called NoShowRate which compares the no-show
+  - Create a new table, called `NoShowRate` which compares the no-show
     rate of two groups.
       - Use this to compare the no-show rate of patients with/without
         hypertension and diabetes.
-  - Create a barplot (`geom_col()`) comparing the rate of no-shows per
+  - Create a bar plot (`geom_col()`) comparing the rate of no-shows per
     1,000 appointments.
   - Create a separate plot for those with/without hypertension and
     with/without diabetes.
@@ -280,7 +280,7 @@ ggplot(NoShowRate, aes()) + geom_col()
         in your `NoShowCounts` table.
   - How would you describe the distribution of no-shows?
       - Normally distributed
-      - Skwed
+      - Skewed
 
 <!-- end list -->
 
