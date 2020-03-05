@@ -180,6 +180,8 @@ Appointments %>%
 
   - How many appointments did 822145925426128 (`PatientID`) have?
   - How many no-shows did 822145925426128 have?
+  - You can do this in a sngle code chunk, but if you do it in two and
+    get the right answers, you will get full credit.
 
 <!-- end list -->
 
@@ -204,6 +206,8 @@ Appointments %>%
   - What is the average age of a no-show patient?
   - What is the standard deviation of the age of a no-show patient
     (`sd()`)?
+  - You can complete this task with a single code chunk, but if you use
+    two and get the right answers, you will get full credit.
 
 <!-- end list -->
 
@@ -221,6 +225,9 @@ Appointments %>%
   - Who had a higher no-show rate?
       - ReceivedSMS == TRUE
       - ReceivedSMS == FALSE
+  - To answer this question, you will need to group by `ReceivedSMS` and
+    then calculate the rate of no-shows for each group. This is similar
+    to something we did in a recent lab.
 
 <!-- end list -->
 
