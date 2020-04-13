@@ -1,0 +1,42 @@
+---
+title: "Example Notebook"
+output: html_notebook
+---
+
+Goal: Colleen wants to know how many Airbnb sites there are in each burrough and what the average price for each burrough is.
+
+```{r}
+## INIT ========================================================================
+library(knitr)
+library(tidyverse)
+options(scipen=999)
+
+
+## VARS ========================================================================
+data_file <- "./new-york-city-airbnb-open-data.zip"
+
+
+## DATA ========================================================================
+Airbnb <- read_csv(data_file)
+Airbnb
+```
+
+
+Blah blah blah
+
+```{r}
+ggplot(Airbnb, aes(price)) + geom_density()
+```
+
+# Analysis: Cost Per Neighbourhood
+
+Here is your analysis of cost per Neighbourhood:
+
+```{r}
+Airbnb %>%
+    group_by(Neighborhood = neighbourhood) %>%
+    summarize("Avg Price" = mean(price),
+              "Min Price"  = min(price),
+              "Max Price"  = max(price))
+```
+

@@ -345,7 +345,6 @@ encounter a concept, you won't learn this material.
 - Pizza, and an exam.
 - **Assigned Reading:** 
     - [Pull Oneself Up By One's Bootstraps](https://en.wiktionary.org/wiki/pull_oneself_up_by_one%27s_bootstraps)
-    - [Bootstrapping](https://en.wikipedia.org/wiki/Bootstrapping_(statistics))
     - [R Markdown Formats](https://rmarkdown.rstudio.com/formats.html)
         - How to do EVERYTHING in R Markdown (nearly)
     - [What Has Happened Down Here Is The Winds Have Changed](http://andrewgelman.com/2016/09/21/what-has-happened-down-here-is-the-winds-have-changed/)
@@ -357,13 +356,12 @@ encounter a concept, you won't learn this material.
   the class, so some of these may change.
 
 ## Week 09: Mar 19
-- **Topics:** The Surprising Adventures of Baron Munchausen
-    - Explanation of P-Values
-    - Sampling Theory Primer
+- **Topics:** Is Statistical Significance, Significant?
     - Standard Deviation
     - Confidence Intervals
-    - Bootstrap
-    - Revisiting: The Working Directory
+    - What is a P-Value?
+    - What else can we do?
+    - R Markdown
 - **Assigned Reading:**
     - [R4DS: Model Intro](https://r4ds.had.co.nz/model-intro.html)
     - [R4DS: Model basics](https://r4ds.had.co.nz/model-basics.html)
@@ -389,9 +387,8 @@ encounter a concept, you won't learn this material.
 
 ## Week 12: Apr 09
 - **Topics:** Lasso Your Future :robot_face:
-  - Ethical Analysis 1
-  - More Bootstrapping: Risk Ratios
-  - Lasso
+  - Ethical Analysis
+  - Logistic Regression
 -  **Assigned Reading:**
     - Assignment 04
     - [How Machines Learn](http://flowingdata.com/2017/12/20/how-machines-learn/)
@@ -400,7 +397,6 @@ encounter a concept, you won't learn this material.
 ## Week 13: Apr 16
 - **Topics:** Can't See The Forest For All These Trees
   - Ethical Analysis 2
-  - More About Machine Learning :robot_face:
   - Decision Trees
   - Random Forests
       - The relationship between the random Forest and bootstrapping

@@ -329,7 +329,7 @@ ggplot(NoShowCounts, aes()) +
 NoShowCounts <-
     Appointments %>%
     group_by(PatientID) %>%
-    summarize(n = n())
+    summarize(n = sum(NoShow))
 
 ggplot(NoShowCounts, aes(n)) +
     geom_histogram()
